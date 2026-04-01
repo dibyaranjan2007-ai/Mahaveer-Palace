@@ -1,803 +1,2645 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mahaveer Palace – Where Tradition Meets Modern Living</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Cinzel+Decorative:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<style>
-:root {
-  --royal-brown: #5C3A1E;
-  --deep-gold: #C9922A;
-  --light-gold: #E8B96A;
-  --pale-gold: #F5DFA0;
-  --emerald: #1A5C3A;
-  --cream: #F7F0E6;
-  --parchment: #EDE0C8;
-  --parchment-dark: #D4C4A0;
-  --white: #FFFDF8;
-  --text-dark: #2C1A0E;
-  --text-mid: #5C3A1E;
-  --text-light: #8B6A4A;
-  --shadow: rgba(92,58,30,0.18);
-  --glass: rgba(255,253,248,0.82);
-  --saffron: #E8621A;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text-dark);overflow-x:hidden}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahaveer Palace – Where Tradition Meets Modern Living</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Cinzel+Decorative:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --royal-brown: #5C3A1E;
+      --deep-gold: #C9922A;
+      --light-gold: #E8B96A;
+      --pale-gold: #F5DFA0;
+      --emerald: #1A5C3A;
+      --cream: #F7F0E6;
+      --parchment: #EDE0C8;
+      --parchment-dark: #D4C4A0;
+      --white: #FFFDF8;
+      --text-dark: #2C1A0E;
+      --text-mid: #5C3A1E;
+      --text-light: #8B6A4A;
+      --shadow: rgba(92, 58, 30, 0.18);
+      --glass: rgba(255, 253, 248, 0.82);
+      --saffron: #E8621A;
+    }
 
-.lotus-bg{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cg opacity='0.055' fill='%23C9922A'%3E%3Cellipse cx='60' cy='60' rx='8' ry='20'/%3E%3Cellipse cx='60' cy='60' rx='8' ry='20' transform='rotate(45 60 60)'/%3E%3Cellipse cx='60' cy='60' rx='8' ry='20' transform='rotate(90 60 60)'/%3E%3Cellipse cx='60' cy='60' rx='8' ry='20' transform='rotate(135 60 60)'/%3E%3Ccircle cx='60' cy='60' r='5'/%3E%3C/g%3E%3C/svg%3E") repeat,linear-gradient(135deg,#F7F0E6 0%,#EDE0C8 50%,#F2E8D5 100%)}
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
 
-.divider{display:flex;align-items:center;justify-content:center;gap:1rem;margin:1rem 0}
-.divider::before,.divider::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--deep-gold),transparent);max-width:200px}
-.divider-icon{font-size:1.3rem;color:var(--deep-gold);animation:spin-slow 8s linear infinite}
-@keyframes spin-slow{to{transform:rotate(360deg)}}
+    html {
+      scroll-behavior: smooth
+    }
 
-.section-tag{font-family:'Lato',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--deep-gold);display:block;margin-bottom:.6rem}
-.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,4vw,3rem);color:var(--royal-brown);line-height:1.2;margin-bottom:.5rem}
-.section-title em{font-style:italic;color:var(--deep-gold)}
-.section-sub{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--text-light);max-width:580px}
-.section-header{text-align:center;margin-bottom:.5rem}
-.section-header .section-sub{margin:0 auto}
-.container{max-width:1200px;margin:0 auto}
+    body {
+      font-family: 'Lato', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      overflow-x: hidden
+    }
 
-/* NAVBAR */
-#navbar{position:fixed;top:0;left:0;right:0;z-index:1000;transition:all .4s;padding:.8rem 0}
-#navbar.scrolled{background:rgba(247,240,230,.97);backdrop-filter:blur(16px);box-shadow:0 2px 24px var(--shadow);padding:.4rem 0}
-.nav-inner{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between}
-.nav-logo{display:flex;align-items:center;gap:.8rem}
-.nav-logo-emblem{width:42px;height:42px;border-radius:50%;overflow:hidden;border:2px solid var(--deep-gold);flex-shrink:0;background:var(--parchment)}
-.nav-logo-emblem img{width:100%;height:100%;object-fit:cover}
-.nav-logo-text{display:flex;flex-direction:column;line-height:1}
-.nav-logo-main{font-family:'Cinzel Decorative',serif;font-size:1rem;color:var(--royal-brown)}
-.nav-logo-sub{font-family:'Cormorant Garamond',serif;font-size:.65rem;letter-spacing:.18em;color:var(--deep-gold);text-transform:uppercase}
-.nav-links{display:flex;list-style:none;gap:2rem}
-.nav-links a{font-family:'Lato',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--royal-brown);text-decoration:none;position:relative;transition:color .3s}
-.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:2px;background:var(--deep-gold);transition:width .3s}
-.nav-links a:hover{color:var(--deep-gold)}
-.nav-links a:hover::after{width:100%}
-.nav-cta{background:var(--deep-gold);color:var(--white)!important;padding:.45rem 1.2rem}
-.nav-cta::after{display:none!important}
-.nav-cta:hover{background:var(--royal-brown)!important}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
-.hamburger span{display:block;width:24px;height:2px;background:var(--royal-brown);transition:all .3s}
-.mobile-menu{display:none;position:fixed;inset:0;background:var(--cream);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:2rem}
-.mobile-menu.open{display:flex}
-.mobile-menu a{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--royal-brown);text-decoration:none;transition:color .3s}
-.mobile-menu a:hover{color:var(--deep-gold)}
-.mobile-close{position:absolute;top:1.5rem;right:2rem;font-size:2rem;cursor:pointer;color:var(--royal-brown);background:none;border:none}
+    .lotus-bg {
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cg opacity='0.055' fill='%23C9922A'%3E%3Cellipse cx='60' cy='60' rx='8' ry='20'/%3E%3Cellipse cx='60' cy='60' rx='8' ry='20' transform='rotate(45 60 60)'/%3E%3Cellipse cx='60' cy='60' rx='8' ry='20' transform='rotate(90 60 60)'/%3E%3Cellipse cx='60' cy='60' rx='8' ry='20' transform='rotate(135 60 60)'/%3E%3Ccircle cx='60' cy='60' r='5'/%3E%3C/g%3E%3C/svg%3E") repeat, linear-gradient(135deg, #F7F0E6 0%, #EDE0C8 50%, #F2E8D5 100%)
+    }
 
-/* HERO */
-#hero{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.hero-bg-img{position:absolute;inset:0;background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Puri_jagannath_temple_from_front.jpg/1280px-Puri_jagannath_temple_from_front.jpg');background-size:cover;background-position:center top;transform:scale(1.05);animation:heroZoom 20s ease-in-out infinite alternate}
-@keyframes heroZoom{from{transform:scale(1.05)}to{transform:scale(1.12)}}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,8,2,.82) 0%,rgba(44,26,14,.62) 45%,rgba(92,58,30,.75) 85%,rgba(26,92,58,.5) 100%);z-index:1}
-.hero-bottom-border{position:absolute;bottom:0;left:0;right:0;height:8px;z-index:3;background:repeating-linear-gradient(90deg,var(--deep-gold) 0,var(--deep-gold) 18px,var(--saffron) 18px,var(--saffron) 24px,var(--emerald) 24px,var(--emerald) 42px,var(--saffron) 42px,var(--saffron) 48px)}
-.hero-content{position:relative;z-index:2;text-align:center;padding:2rem;max-width:900px;animation:fadeUp 1.2s ease both}
-@keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
-.hero-badge{display:inline-block;font-family:'Lato',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--pale-gold);border:1px solid rgba(233,185,106,.4);padding:.4rem 1.5rem;margin-bottom:1.5rem;animation:fadeUp 1s ease .2s both}
-.hero-title{font-family:'Cinzel Decorative',serif;font-size:clamp(1.8rem,5.5vw,4rem);color:var(--white);line-height:1.15;margin-bottom:.6rem;text-shadow:0 4px 30px rgba(0,0,0,.5);animation:fadeUp 1s ease .4s both}
-.hero-title span{color:var(--light-gold)}
-.hero-sub{font-family:'Cormorant Garamond',serif;font-size:clamp(1.1rem,2.5vw,1.6rem);color:var(--pale-gold);margin-bottom:2.5rem;font-style:italic;animation:fadeUp 1s ease .6s both}
-.hero-divider{display:flex;align-items:center;justify-content:center;gap:.8rem;margin-bottom:2rem;animation:fadeUp 1s ease .65s both}
-.hero-divider::before,.hero-divider::after{content:'';width:80px;height:1px;background:linear-gradient(90deg,transparent,var(--light-gold))}
-.hero-divider::after{background:linear-gradient(90deg,var(--light-gold),transparent)}
-.hero-deities{display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem;animation:fadeUp 1s ease .7s both}
-.hero-deity-pill{display:flex;align-items:center;gap:.5rem;background:rgba(255,253,248,.1);backdrop-filter:blur(8px);border:1px solid rgba(233,185,106,.3);padding:.4rem 1rem}
-.hero-deity-pill span{font-family:'Cormorant Garamond',serif;font-size:.9rem;color:var(--pale-gold)}
-.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fadeUp 1s ease .8s both}
-.btn-primary{background:linear-gradient(135deg,var(--deep-gold),var(--light-gold));color:var(--royal-brown);font-family:'Lato',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.15em;text-transform:uppercase;padding:.9rem 2.4rem;border:none;cursor:pointer;text-decoration:none;display:inline-block;transition:all .3s;box-shadow:0 6px 24px rgba(201,146,42,.35)}
-.btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(201,146,42,.45)}
-.btn-outline{background:transparent;color:var(--pale-gold);font-family:'Lato',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.15em;text-transform:uppercase;padding:.9rem 2.4rem;border:1px solid rgba(233,185,106,.5);cursor:pointer;text-decoration:none;display:inline-block;transition:all .3s}
-.btn-outline:hover{background:rgba(233,185,106,.12);border-color:var(--light-gold);transform:translateY(-3px)}
-.hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:.4rem;color:var(--pale-gold);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;animation:bounce 2s infinite}
-@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+    .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1rem 0
+    }
 
-/* CULTURAL STRIP */
-#cultural-strip{background:var(--royal-brown);padding:4rem 2rem;position:relative;overflow:hidden}
-#cultural-strip::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Ccircle cx='40' cy='40' r='15' fill='none' stroke='%23C9922A' stroke-width='.6' opacity='.22'/%3E%3Ccircle cx='40' cy='40' r='8' fill='none' stroke='%23C9922A' stroke-width='.4' opacity='.18'/%3E%3C/svg%3E") repeat}
-.cultural-strip-header{text-align:center;margin-bottom:2.5rem;position:relative;z-index:1}
-.cultural-strip-header h2{font-family:'Cinzel Decorative',serif;font-size:clamp(1.1rem,3vw,1.8rem);color:var(--pale-gold);letter-spacing:.05em}
-.cultural-strip-header p{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:rgba(245,223,160,.6);margin-top:.5rem}
-.cultural-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;max-width:1200px;margin:0 auto;position:relative;z-index:1}
-.cultural-card{display:flex;flex-direction:column}
-.cultural-img-frame{width:100%;aspect-ratio:4/3;overflow:hidden;border:3px solid rgba(201,146,42,.45);position:relative;margin-bottom:.9rem;background:var(--royal-brown)}
-.cultural-img-frame img{width:100%;height:100%;object-fit:cover;transition:transform .6s;filter:sepia(12%) saturate(1.2) brightness(.9)}
-.cultural-img-frame:hover img{transform:scale(1.06);filter:sepia(5%) saturate(1.35) brightness(1)}
-.cultural-img-frame::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(44,26,14,.65))}
-.cultural-card-title{font-family:'Playfair Display',serif;font-size:1rem;color:var(--pale-gold);margin-bottom:.25rem}
-.cultural-card-sub{font-family:'Cormorant Garamond',serif;font-size:.85rem;font-style:italic;color:rgba(245,223,160,.55)}
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--deep-gold), transparent);
+      max-width: 200px
+    }
 
-/* PATTACHITRA BANNER */
-#pattachitra-banner{padding:0;background:var(--text-dark);border-top:6px solid var(--deep-gold);border-bottom:6px solid var(--deep-gold)}
-.pattachitra-img-wrap{position:relative;height:340px}
-.pattachitra-img-wrap img{width:100%;height:100%;object-fit:cover;opacity:.5;filter:sepia(20%) saturate(1.3)}
-.pattachitra-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(44,26,14,.95) 0%,rgba(44,26,14,.6) 55%,rgba(44,26,14,.25) 100%);display:flex;align-items:center}
-.pattachitra-text{padding:3rem 4rem;max-width:620px}
-.pattachitra-text .section-tag{color:var(--light-gold)}
-.pattachitra-text h2{font-family:'Cinzel Decorative',serif;font-size:clamp(1.3rem,3.5vw,2.3rem);color:var(--white);line-height:1.3;margin-bottom:1rem}
-.pattachitra-text h2 span{color:var(--light-gold)}
-.pattachitra-text p{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic;color:rgba(245,223,160,.8);line-height:1.75;margin-bottom:1.5rem}
-.pattachitra-fact-row{display:flex;gap:2rem;flex-wrap:wrap}
-.pattachitra-fact{text-align:center}
-.pattachitra-fact strong{display:block;font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--deep-gold);line-height:1}
-.pattachitra-fact span{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,223,160,.5)}
+    .divider-icon {
+      font-size: 1.3rem;
+      color: var(--deep-gold);
+      animation: spin-slow 8s linear infinite
+    }
 
-/* ABOUT */
-#about{background:var(--white);padding:6rem 2rem}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;max-width:1200px;margin:0 auto}
-.about-photo-mosaic{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;position:relative}
-.mosaic-img{overflow:hidden;border:2px solid rgba(201,146,42,.3);position:relative;background:var(--parchment)}
-.mosaic-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s;filter:sepia(8%) saturate(1.1)}
-.mosaic-img:hover img{transform:scale(1.05)}
-.mosaic-img:nth-child(1){grid-row:span 2;aspect-ratio:3/4}
-.mosaic-img:nth-child(2){aspect-ratio:4/3}
-.mosaic-img:nth-child(3){aspect-ratio:4/3}
-.mosaic-gold-label{position:absolute;bottom:0;left:0;right:0;padding:.5rem .8rem;background:linear-gradient(transparent,rgba(44,26,14,.8))}
-.mosaic-gold-label span{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.8rem;color:var(--pale-gold)}
-.about-badge-float{position:absolute;bottom:-1rem;right:-1rem;background:var(--deep-gold);color:var(--white);padding:1.2rem;text-align:center;min-width:100px;box-shadow:0 8px 24px rgba(201,146,42,.35);z-index:2}
-.about-badge-float strong{display:block;font-family:'Cinzel Decorative',serif;font-size:1.4rem;line-height:1}
-.about-badge-float span{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase}
-.about-features{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
-.about-feat{display:flex;align-items:flex-start;gap:.8rem}
-.about-feat-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--pale-gold),var(--parchment));border:1px solid var(--deep-gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1rem;color:var(--deep-gold)}
-.about-feat h4{font-family:'Playfair Display',serif;font-size:.9rem;color:var(--royal-brown);margin-bottom:.15rem}
-.about-feat p{font-size:.78rem;color:var(--text-light);line-height:1.4}
+    @keyframes spin-slow {
+      to {
+        transform: rotate(360deg)
+      }
+    }
 
-/* FLATS */
-#flats{background:var(--parchment);padding:6rem 2rem}
-.flats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.8rem;margin-top:3rem}
-.flat-card{background:var(--glass);backdrop-filter:blur(10px);border:1px solid rgba(201,146,42,.25);transition:all .4s;position:relative;overflow:hidden}
-.flat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--royal-brown),var(--deep-gold),var(--emerald))}
-.flat-card:hover{transform:translateY(-8px);box-shadow:0 24px 60px rgba(92,58,30,.18);border-color:var(--deep-gold)}
-.flat-card-header{padding:2rem 2rem 1.2rem;background:linear-gradient(135deg,rgba(92,58,30,.06),rgba(201,146,42,.08));border-bottom:1px solid rgba(201,146,42,.15);position:relative}
-.flat-badge{position:absolute;top:1rem;right:1rem;background:var(--emerald);color:var(--white);font-size:.62rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:.25rem .7rem}
-.flat-icon{font-size:2.5rem;margin-bottom:.8rem}
-.flat-name{font-family:'Playfair Display',serif;font-size:1.35rem;color:var(--royal-brown);margin-bottom:.2rem}
-.flat-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.9rem;color:var(--text-light)}
-.flat-card-body{padding:1.5rem 2rem}
-.flat-specs{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:1.2rem}
-.flat-spec{text-align:center}
-.flat-spec-val{font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--deep-gold);font-weight:700;display:block}
-.flat-spec-label{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-light)}
-.flat-features{list-style:none;margin-bottom:1.5rem}
-.flat-features li{font-size:.82rem;color:var(--text-mid);padding:.3rem 0;border-bottom:1px solid rgba(201,146,42,.1);display:flex;align-items:center;gap:.5rem}
-.flat-features li i{color:var(--emerald);font-size:.7rem}
-.btn-enquire{width:100%;background:transparent;color:var(--royal-brown);font-family:'Lato',sans-serif;font-weight:700;font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;padding:.8rem;border:2px solid var(--royal-brown);cursor:pointer;transition:all .3s;text-decoration:none;display:block;text-align:center}
-.btn-enquire:hover{background:var(--royal-brown);color:var(--white)}
+    .section-tag {
+      font-family: 'Lato', sans-serif;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--deep-gold);
+      display: block;
+      margin-bottom: .6rem
+    }
 
-/* TEMPLE GALLERY */
-#temple-strip{background:var(--text-dark);padding:5rem 2rem}
-.temple-photos{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;margin-top:2.5rem}
-.temple-photo{position:relative;overflow:hidden;aspect-ratio:3/4;cursor:pointer;background:var(--royal-brown)}
-.temple-photo img{width:100%;height:100%;object-fit:cover;transition:transform .5s;filter:sepia(15%) saturate(1.2) brightness(.85)}
-.temple-photo:hover img{transform:scale(1.08);filter:sepia(5%) saturate(1.4) brightness(1)}
-.temple-photo-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(44,26,14,.9));padding:1.2rem .8rem .8rem;opacity:0;transition:opacity .3s}
-.temple-photo:hover .temple-photo-caption{opacity:1}
-.temple-photo-caption span{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.85rem;color:var(--pale-gold)}
-.temple-photo-border{position:absolute;inset:0;border:2px solid transparent;transition:border-color .3s;pointer-events:none}
-.temple-photo:hover .temple-photo-border{border-color:rgba(201,146,42,.5)}
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      color: var(--royal-brown);
+      line-height: 1.2;
+      margin-bottom: .5rem
+    }
 
-/* AMENITIES */
-#amenities{background:var(--royal-brown);padding:6rem 2rem}
-#amenities .section-tag{color:var(--light-gold)}
-#amenities .section-title{color:var(--white)}
-.amenities-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.2rem;margin-top:3rem}
-.amenity-card{background:rgba(255,253,248,.07);border:1px solid rgba(201,146,42,.25);padding:2rem 1.2rem;text-align:center;transition:all .3s}
-.amenity-card:hover{background:rgba(201,146,42,.15);border-color:var(--deep-gold);transform:translateY(-4px)}
-.amenity-emoji{font-size:2.2rem;margin-bottom:.8rem;display:block}
-.amenity-name{font-family:'Playfair Display',serif;font-size:.95rem;color:var(--pale-gold);margin-bottom:.3rem}
-.amenity-desc{font-size:.72rem;color:rgba(245,223,160,.55);line-height:1.4}
+    .section-title em {
+      font-style: italic;
+      color: var(--deep-gold)
+    }
 
-/* LOCATION */
-#location{background:var(--white);padding:6rem 2rem}
-.location-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-top:3rem}
-.advantage-list{list-style:none}
-.advantage-item{display:flex;align-items:center;gap:1rem;padding:.9rem 0;border-bottom:1px solid var(--parchment)}
-.advantage-icon{width:40px;height:40px;background:linear-gradient(135deg,var(--pale-gold),var(--parchment));border:1px solid rgba(201,146,42,.35);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--deep-gold)}
-.advantage-item h4{font-family:'Playfair Display',serif;font-size:.9rem;color:var(--royal-brown)}
-.advantage-item p{font-size:.75rem;color:var(--text-light)}
-.map-container{border:2px solid rgba(201,146,42,.3);overflow:hidden}
-.map-container iframe{width:100%;height:400px;border:none;display:block}
-.map-label{background:var(--deep-gold);color:var(--white);font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:.5rem 1rem;text-align:center}
+    .section-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--text-light);
+      max-width: 580px
+    }
 
-/* TRANSPORT */
-#transport{background:var(--parchment);padding:6rem 2rem}
-.transport-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;margin-top:3rem}
-.transport-card{background:var(--white);border:1px solid rgba(201,146,42,.2);padding:2rem 1.5rem;display:flex;flex-direction:column;gap:.8rem;transition:all .3s}
-.transport-card:hover{border-color:var(--deep-gold);box-shadow:0 8px 30px var(--shadow);transform:translateY(-3px)}
-.transport-icon{font-size:2rem;color:var(--deep-gold)}
-.transport-card h3{font-family:'Playfair Display',serif;font-size:1rem;color:var(--royal-brown)}
-.transport-card p{font-size:.8rem;color:var(--text-light);line-height:1.5}
+    .section-header {
+      text-align: center;
+      margin-bottom: .5rem
+    }
 
-/* GALLERY */
-#gallery{background:var(--royal-brown);padding:6rem 2rem}
-#gallery .section-tag{color:var(--light-gold)}
-#gallery .section-title{color:var(--white)}
-.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:3rem}
-.gallery-item{overflow:hidden;position:relative;cursor:pointer;border:1px solid rgba(201,146,42,.2);aspect-ratio:1}
-.gallery-item:nth-child(1){grid-column:span 2;aspect-ratio:auto;min-height:220px}
-.gallery-item:nth-child(4){grid-column:span 2;aspect-ratio:auto;min-height:180px}
-.gallery-item-inner{width:100%;height:100%;background:linear-gradient(135deg,rgba(201,146,42,.2),rgba(92,58,30,.3));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.8rem}
-.gallery-emoji{font-size:3rem}
-.gallery-label{font-family:'Cormorant Garamond',serif;font-size:.9rem;font-style:italic;color:var(--pale-gold);text-align:center;padding:0 1rem}
-.gallery-overlay{position:absolute;inset:0;background:rgba(44,26,14,.5);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s}
-.gallery-overlay i{color:var(--pale-gold);font-size:2rem}
-.gallery-item:hover .gallery-overlay{opacity:1}
-.gallery-item:hover{border-color:var(--deep-gold)}
+    .section-header .section-sub {
+      margin: 0 auto
+    }
 
-/* ENQUIRY */
-#enquiry{background:var(--cream);padding:6rem 2rem}
-.enquiry-wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:5rem;align-items:start;margin-top:3rem}
-.enquiry-info p{font-size:.9rem;color:var(--text-light);line-height:1.7;margin-bottom:2rem}
-.enquiry-bullet{display:flex;flex-direction:column;gap:.8rem}
-.enquiry-bullet li{list-style:none;display:flex;align-items:center;gap:.7rem;font-size:.85rem;color:var(--text-mid)}
-.enquiry-bullet li i{color:var(--emerald)}
-.enquiry-form{background:var(--white);border:1px solid rgba(201,146,42,.25);padding:2.5rem;position:relative}
-.enquiry-form::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--royal-brown),var(--deep-gold),var(--emerald))}
-.form-group{margin-bottom:1.2rem}
-.form-group label{display:block;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-light);margin-bottom:.4rem}
-.form-group input,.form-group select,.form-group textarea{width:100%;padding:.75rem 1rem;border:1px solid var(--parchment-dark);background:var(--cream);font-family:'Lato',sans-serif;font-size:.9rem;color:var(--text-dark);outline:none;transition:border-color .3s;-webkit-appearance:none}
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--deep-gold)}
-.form-group textarea{resize:vertical;min-height:90px}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.btn-brochure{width:100%;background:linear-gradient(135deg,var(--royal-brown),var(--deep-gold));color:var(--white);font-family:'Lato',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.15em;text-transform:uppercase;padding:1rem;border:none;cursor:pointer;transition:all .3s;margin-top:.5rem}
-.btn-brochure:hover{opacity:.9;transform:translateY(-2px);box-shadow:0 8px 24px rgba(92,58,30,.25)}
+    .container {
+      max-width: 1200px;
+      margin: 0 auto
+    }
 
-/* CONTACT */
-#contact{background:var(--parchment);padding:6rem 2rem}
-.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2rem;margin-top:3rem}
-.contact-card{background:var(--white);border:1px solid rgba(201,146,42,.2);padding:2rem;text-align:center;transition:all .3s}
-.contact-card:hover{border-color:var(--deep-gold);box-shadow:0 8px 30px var(--shadow)}
-.contact-card-icon{width:56px;height:56px;background:linear-gradient(135deg,var(--pale-gold),var(--parchment));border:1px solid var(--deep-gold);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:1.4rem;color:var(--deep-gold)}
-.contact-card h3{font-family:'Playfair Display',serif;font-size:1rem;color:var(--royal-brown);margin-bottom:.5rem}
-.contact-card p,.contact-card a{font-size:.85rem;color:var(--text-light);line-height:1.6;text-decoration:none;display:block}
-.contact-card a:hover{color:var(--deep-gold)}
-.whatsapp-btn{display:inline-flex;align-items:center;gap:.6rem;background:#25D366;color:var(--white)!important;padding:.6rem 1.5rem;margin-top:.8rem;font-weight:700;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;border-radius:2px;transition:all .3s;text-decoration:none!important}
-.whatsapp-btn:hover{background:#128C7E;transform:translateY(-2px)}
-.social-icons{display:flex;gap:.8rem;justify-content:center;margin-top:1rem}
-.social-icon{width:38px;height:38px;background:var(--parchment);border:1px solid rgba(201,146,42,.3);display:flex;align-items:center;justify-content:center;color:var(--royal-brown);font-size:.9rem;text-decoration:none;transition:all .3s}
-.social-icon:hover{background:var(--deep-gold);color:var(--white);border-color:var(--deep-gold)}
+    /* NAVBAR */
+    #navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      transition: all .4s;
+      padding: .8rem 0
+    }
 
-/* FOOTER */
-footer{background:var(--text-dark);color:rgba(255,253,248,.7);padding:0 2rem 2rem}
-.footer-stripe{height:6px;background:repeating-linear-gradient(90deg,var(--deep-gold) 0,var(--deep-gold) 20px,var(--saffron) 20px,var(--saffron) 28px,var(--emerald) 28px,var(--emerald) 48px,var(--saffron) 48px,var(--saffron) 56px);margin-bottom:3rem}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:4rem;max-width:1200px;margin:0 auto;padding-bottom:3rem;border-bottom:1px solid rgba(201,146,42,.2)}
-.footer-logo-main{font-family:'Cinzel Decorative',serif;font-size:1.2rem;color:var(--pale-gold);display:block;margin-bottom:.3rem}
-.footer-logo-sub{font-family:'Cormorant Garamond',serif;font-size:.7rem;letter-spacing:.18em;color:var(--light-gold);text-transform:uppercase;display:block;margin-bottom:1rem}
-.footer-brand p{font-size:.82rem;line-height:1.7;color:rgba(255,253,248,.5);max-width:280px}
-.footer-col h4{font-family:'Playfair Display',serif;font-size:.9rem;color:var(--pale-gold);letter-spacing:.1em;text-transform:uppercase;margin-bottom:1.2rem;padding-bottom:.6rem;border-bottom:1px solid rgba(201,146,42,.25)}
-.footer-links{list-style:none;display:flex;flex-direction:column;gap:.6rem}
-.footer-links a{color:rgba(255,253,248,.5);text-decoration:none;font-size:.82rem;transition:color .3s}
-.footer-links a:hover{color:var(--light-gold)}
-.footer-bottom{max-width:1200px;margin:2rem auto 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
-.footer-bottom p{font-size:.75rem;color:rgba(255,253,248,.35)}
-.footer-disclaimer{font-size:.7rem;color:rgba(255,253,248,.28);max-width:1200px;margin:1.5rem auto 0;line-height:1.6;border-top:1px solid rgba(255,255,255,.05);padding-top:1rem}
+    #navbar.scrolled {
+      background: rgba(247, 240, 230, .97);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 2px 24px var(--shadow);
+      padding: .4rem 0
+    }
 
-/* ANIMATIONS */
-.fade-in{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
-.fade-in.visible{opacity:1;transform:translateY(0)}
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between
+    }
 
-/* RESPONSIVE */
-@media(max-width:900px){
-  .nav-links{display:none}
-  .hamburger{display:flex}
-  .about-grid,.location-grid,.enquiry-wrap,.footer-grid{grid-template-columns:1fr;gap:2.5rem}
-  .cultural-grid{grid-template-columns:1fr}
-  .temple-photos{grid-template-columns:1fr 1fr}
-  .gallery-grid{grid-template-columns:1fr 1fr}
-  .gallery-item:nth-child(1),.gallery-item:nth-child(4){grid-column:span 1}
-  .footer-grid{grid-template-columns:1fr}
-  .pattachitra-text{padding:2rem}
-  .about-badge-float{right:1rem}
-}
-@media(max-width:600px){
-  section,#hero{padding:4rem 1.2rem}
-  .gallery-grid{grid-template-columns:1fr}
-  .form-row{grid-template-columns:1fr}
-  .hero-btns{flex-direction:column;align-items:center}
-  .footer-bottom{flex-direction:column;text-align:center}
-  .amenities-grid{grid-template-columns:repeat(2,1fr)}
-  .temple-photos{grid-template-columns:1fr 1fr}
-  .hero-deities{flex-wrap:wrap;gap:.8rem}
-  .pattachitra-img-wrap{height:auto}
-  .pattachitra-overlay{position:relative;background:rgba(44,26,14,.92)}
-}
-</style>
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: .8rem
+    }
+
+    .nav-logo-emblem {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid var(--deep-gold);
+      flex-shrink: 0;
+      background: var(--parchment)
+    }
+
+    .nav-logo-emblem img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .nav-logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1
+    }
+
+    .nav-logo-main {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1rem;
+      color: var(--royal-brown)
+    }
+
+    .nav-logo-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: .65rem;
+      letter-spacing: .18em;
+      color: var(--deep-gold);
+      text-transform: uppercase
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem
+    }
+
+    .nav-links a {
+      font-family: 'Lato', sans-serif;
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--royal-brown);
+      text-decoration: none;
+      position: relative;
+      transition: color .3s
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--deep-gold);
+      transition: width .3s
+    }
+
+    .nav-links a:hover {
+      color: var(--deep-gold)
+    }
+
+    .nav-links a:hover::after {
+      width: 100%
+    }
+
+    .nav-cta {
+      background: var(--deep-gold);
+      color: var(--white) !important;
+      padding: .45rem 1.2rem
+    }
+
+    .nav-cta::after {
+      display: none !important
+    }
+
+    .nav-cta:hover {
+      background: var(--royal-brown) !important
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--royal-brown);
+      transition: all .3s
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--cream);
+      z-index: 999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem
+    }
+
+    .mobile-menu.open {
+      display: flex
+    }
+
+    .mobile-menu a {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: var(--royal-brown);
+      text-decoration: none;
+      transition: color .3s
+    }
+
+    .mobile-menu a:hover {
+      color: var(--deep-gold)
+    }
+
+    .mobile-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 2rem;
+      font-size: 2rem;
+      cursor: pointer;
+      color: var(--royal-brown);
+      background: none;
+      border: none
+    }
+
+    /* HERO */
+    #hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden
+    }
+
+    .hero-bg-img {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Puri_jagannath_temple_from_front.jpg/1280px-Puri_jagannath_temple_from_front.jpg');
+      background-size: cover;
+      background-position: center top;
+      transform: scale(1.05);
+      animation: heroZoom 20s ease-in-out infinite alternate
+    }
+
+    @keyframes heroZoom {
+      from {
+        transform: scale(1.05)
+      }
+
+      to {
+        transform: scale(1.12)
+      }
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(20, 8, 2, .82) 0%, rgba(44, 26, 14, .62) 45%, rgba(92, 58, 30, .75) 85%, rgba(26, 92, 58, .5) 100%);
+      z-index: 1
+    }
+
+    .hero-bottom-border {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 8px;
+      z-index: 3;
+      background: repeating-linear-gradient(90deg, var(--deep-gold) 0, var(--deep-gold) 18px, var(--saffron) 18px, var(--saffron) 24px, var(--emerald) 24px, var(--emerald) 42px, var(--saffron) 42px, var(--saffron) 48px)
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 2rem;
+      max-width: 900px;
+      animation: fadeUp 1.2s ease both
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    .hero-badge {
+      display: inline-block;
+      font-family: 'Lato', sans-serif;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--pale-gold);
+      border: 1px solid rgba(233, 185, 106, .4);
+      padding: .4rem 1.5rem;
+      margin-bottom: 1.5rem;
+      animation: fadeUp 1s ease .2s both
+    }
+
+    .hero-title {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: clamp(1.8rem, 5.5vw, 4rem);
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: .6rem;
+      text-shadow: 0 4px 30px rgba(0, 0, 0, .5);
+      animation: fadeUp 1s ease .4s both
+    }
+
+    .hero-title span {
+      color: #2ECC71
+    }
+
+    .hero-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+      color: var(--pale-gold);
+      margin-bottom: 2.5rem;
+      font-style: italic;
+      animation: fadeUp 1s ease .6s both
+    }
+
+    .hero-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .8rem;
+      margin-bottom: 2rem;
+      animation: fadeUp 1s ease .65s both
+    }
+
+    .hero-divider::before,
+    .hero-divider::after {
+      content: '';
+      width: 80px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--light-gold))
+    }
+
+    .hero-divider::after {
+      background: linear-gradient(90deg, var(--light-gold), transparent)
+    }
+
+    .hero-deities {
+      display: flex;
+      gap: 1.2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+      animation: fadeUp 1s ease .7s both
+    }
+
+    .hero-deity-pill {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      background: rgba(255, 253, 248, .1);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(233, 185, 106, .3);
+      padding: .4rem 1rem
+    }
+
+    .deity-icon {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .deity-icon-spin {
+      animation: deitySpin 4s linear infinite;
+    }
+
+    .deity-icon-sway {
+      animation: deitySway 2.5s ease-in-out infinite;
+      transform-origin: bottom center;
+    }
+
+    .deity-icon-pulse {
+      animation: deityPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes deitySpin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes deitySway {
+      0%, 100% { transform: rotate(-8deg); }
+      50% { transform: rotate(8deg); }
+    }
+
+    @keyframes deityPulse {
+      0%, 100% { transform: scale(1); opacity: .85; }
+      50% { transform: scale(1.18); opacity: 1; }
+    }
+
+    .hero-deity-pill span {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: .9rem;
+      color: var(--pale-gold)
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeUp 1s ease .8s both
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--deep-gold), var(--light-gold));
+      color: var(--royal-brown);
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+      font-size: .85rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      padding: .9rem 2.4rem;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all .3s;
+      box-shadow: 0 6px 24px rgba(201, 146, 42, .35)
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(201, 146, 42, .45)
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--pale-gold);
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+      font-size: .85rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      padding: .9rem 2.4rem;
+      border: 1px solid rgba(233, 185, 106, .5);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all .3s
+    }
+
+    .btn-outline:hover {
+      background: rgba(233, 185, 106, .12);
+      border-color: var(--light-gold);
+      transform: translateY(-3px)
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .4rem;
+      color: var(--pale-gold);
+      font-size: .7rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      animation: bounce 2s infinite
+    }
+
+    @keyframes bounce {
+
+      0%,
+      100% {
+        transform: translateX(-50%) translateY(0)
+      }
+
+      50% {
+        transform: translateX(-50%) translateY(8px)
+      }
+    }
+
+    /* CULTURAL STRIP */
+    #cultural-strip {
+      background: var(--royal-brown);
+      padding: 4rem 2rem;
+      position: relative;
+      overflow: hidden
+    }
+
+    #cultural-strip::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Ccircle cx='40' cy='40' r='15' fill='none' stroke='%23C9922A' stroke-width='.6' opacity='.22'/%3E%3Ccircle cx='40' cy='40' r='8' fill='none' stroke='%23C9922A' stroke-width='.4' opacity='.18'/%3E%3C/svg%3E") repeat
+    }
+
+    .cultural-strip-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      position: relative;
+      z-index: 1
+    }
+
+    .cultural-strip-header h2 {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: clamp(1.1rem, 3vw, 1.8rem);
+      color: var(--pale-gold);
+      letter-spacing: .05em
+    }
+
+    .cultural-strip-header p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-style: italic;
+      color: rgba(245, 223, 160, .6);
+      margin-top: .5rem
+    }
+
+    .cultural-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1
+    }
+
+    .cultural-card {
+      display: flex;
+      flex-direction: column
+    }
+
+    .cultural-img-frame {
+      width: 100%;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      border: 3px solid rgba(201, 146, 42, .45);
+      position: relative;
+      margin-bottom: .9rem;
+      background: var(--royal-brown)
+    }
+
+    .cultural-img-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .6s;
+      filter: sepia(12%) saturate(1.2) brightness(.9)
+    }
+
+    .cultural-img-frame:hover img {
+      transform: scale(1.06);
+      filter: sepia(5%) saturate(1.35) brightness(1)
+    }
+
+    .cultural-img-frame::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 55%, rgba(44, 26, 14, .65))
+    }
+
+    .cultural-card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--pale-gold);
+      margin-bottom: .25rem
+    }
+
+    .cultural-card-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: .85rem;
+      font-style: italic;
+      color: rgba(245, 223, 160, .55)
+    }
+
+    /* PATTACHITRA BANNER */
+    #pattachitra-banner {
+      padding: 0;
+      background: var(--text-dark);
+      border-top: 6px solid var(--deep-gold);
+      border-bottom: 6px solid var(--deep-gold)
+    }
+
+    .pattachitra-img-wrap {
+      position: relative;
+      height: 340px
+    }
+
+    .pattachitra-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: .5;
+      filter: sepia(20%) saturate(1.3)
+    }
+
+    .pattachitra-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(44, 26, 14, .95) 0%, rgba(44, 26, 14, .6) 55%, rgba(44, 26, 14, .25) 100%);
+      display: flex;
+      align-items: center
+    }
+
+    .pattachitra-text {
+      padding: 3rem 4rem;
+      max-width: 620px
+    }
+
+    .pattachitra-text .section-tag {
+      color: var(--light-gold)
+    }
+
+    .pattachitra-text h2 {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: clamp(1.3rem, 3.5vw, 2.3rem);
+      color: var(--white);
+      line-height: 1.3;
+      margin-bottom: 1rem
+    }
+
+    .pattachitra-text h2 span {
+      color: var(--light-gold)
+    }
+
+    .pattachitra-text p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      color: rgba(245, 223, 160, .8);
+      line-height: 1.75;
+      margin-bottom: 1.5rem
+    }
+
+    .pattachitra-fact-row {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap
+    }
+
+    .pattachitra-fact {
+      text-align: center
+    }
+
+    .pattachitra-fact strong {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: var(--deep-gold);
+      line-height: 1
+    }
+
+    .pattachitra-fact span {
+      font-size: .7rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(245, 223, 160, .5)
+    }
+
+    /* ABOUT */
+    #about {
+      background: var(--white);
+      padding: 6rem 2rem
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto
+    }
+
+    .about-photo-mosaic {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .8rem;
+      position: relative
+    }
+
+    .mosaic-img {
+      overflow: hidden;
+      border: 2px solid rgba(201, 146, 42, .3);
+      position: relative;
+      background: var(--parchment)
+    }
+
+    .mosaic-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .6s;
+      filter: sepia(8%) saturate(1.1)
+    }
+
+    .mosaic-img:hover img {
+      transform: scale(1.05)
+    }
+
+    .mosaic-img:nth-child(1) {
+      grid-row: span 2;
+      aspect-ratio: 3/4
+    }
+
+    .mosaic-img:nth-child(2) {
+      aspect-ratio: 4/3
+    }
+
+    .mosaic-img:nth-child(3) {
+      aspect-ratio: 4/3
+    }
+
+    .mosaic-gold-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: .5rem .8rem;
+      background: linear-gradient(transparent, rgba(44, 26, 14, .8))
+    }
+
+    .mosaic-gold-label span {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: .8rem;
+      color: var(--pale-gold)
+    }
+
+    .about-badge-float {
+      position: absolute;
+      bottom: -1rem;
+      right: -1rem;
+      background: var(--deep-gold);
+      color: var(--white);
+      padding: 1.2rem;
+      text-align: center;
+      min-width: 100px;
+      box-shadow: 0 8px 24px rgba(201, 146, 42, .35);
+      z-index: 2
+    }
+
+    .about-badge-float strong {
+      display: block;
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1.4rem;
+      line-height: 1
+    }
+
+    .about-badge-float span {
+      font-size: .6rem;
+      letter-spacing: .1em;
+      text-transform: uppercase
+    }
+
+    .about-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 2rem
+    }
+
+    .about-feat {
+      display: flex;
+      align-items: flex-start;
+      gap: .8rem
+    }
+
+    .about-feat-icon {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--pale-gold), var(--parchment));
+      border: 1px solid var(--deep-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1rem;
+      color: var(--deep-gold)
+    }
+
+    .about-feat h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: .9rem;
+      color: var(--royal-brown);
+      margin-bottom: .15rem
+    }
+
+    .about-feat p {
+      font-size: .78rem;
+      color: var(--text-light);
+      line-height: 1.4
+    }
+
+    /* FLATS */
+    #flats {
+      background: var(--parchment);
+      padding: 6rem 2rem
+    }
+
+    .flats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.8rem;
+      margin-top: 3rem
+    }
+
+    .flat-card {
+      background: var(--glass);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(201, 146, 42, .25);
+      transition: all .4s;
+      position: relative;
+      overflow: hidden
+    }
+
+    .flat-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--royal-brown), var(--deep-gold), var(--emerald))
+    }
+
+    .flat-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 60px rgba(92, 58, 30, .18);
+      border-color: var(--deep-gold)
+    }
+
+    .flat-card-header {
+      padding: 2rem 2rem 1.2rem;
+      background: linear-gradient(135deg, rgba(92, 58, 30, .06), rgba(201, 146, 42, .08));
+      border-bottom: 1px solid rgba(201, 146, 42, .15);
+      position: relative
+    }
+
+    .flat-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: var(--emerald);
+      color: var(--white);
+      font-size: .62rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      padding: .25rem .7rem
+    }
+
+    .flat-icon {
+      font-size: 2.5rem;
+      margin-bottom: .8rem
+    }
+
+    .flat-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      color: var(--royal-brown);
+      margin-bottom: .2rem
+    }
+
+    .flat-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: .9rem;
+      color: var(--text-light)
+    }
+
+    .flat-card-body {
+      padding: 1.5rem 2rem
+    }
+
+    .flat-specs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .8rem;
+      margin-bottom: 1.2rem
+    }
+
+    .flat-spec {
+      text-align: center
+    }
+
+    .flat-spec-val {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      color: var(--deep-gold);
+      font-weight: 700;
+      display: block
+    }
+
+    .flat-spec-label {
+      font-size: .68rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--text-light)
+    }
+
+    .flat-features {
+      list-style: none;
+      margin-bottom: 1.5rem
+    }
+
+    .flat-features li {
+      font-size: .82rem;
+      color: var(--text-mid);
+      padding: .3rem 0;
+      border-bottom: 1px solid rgba(201, 146, 42, .1);
+      display: flex;
+      align-items: center;
+      gap: .5rem
+    }
+
+    .flat-features li i {
+      color: var(--emerald);
+      font-size: .7rem
+    }
+
+    .btn-enquire {
+      width: 100%;
+      background: transparent;
+      color: var(--royal-brown);
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+      font-size: .8rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      padding: .8rem;
+      border: 2px solid var(--royal-brown);
+      cursor: pointer;
+      transition: all .3s;
+      text-decoration: none;
+      display: block;
+      text-align: center
+    }
+
+    .btn-enquire:hover {
+      background: var(--royal-brown);
+      color: var(--white)
+    }
+
+    /* TEMPLE GALLERY */
+    #temple-strip {
+      background: var(--text-dark);
+      padding: 5rem 2rem
+    }
+
+    .temple-photos {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: .6rem;
+      margin-top: 2.5rem
+    }
+
+    .temple-photo {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 3/4;
+      cursor: pointer;
+      background: var(--royal-brown)
+    }
+
+    .temple-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .5s;
+      filter: sepia(15%) saturate(1.2) brightness(.85)
+    }
+
+    .temple-photo:hover img {
+      transform: scale(1.08);
+      filter: sepia(5%) saturate(1.4) brightness(1)
+    }
+
+    .temple-photo-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(44, 26, 14, .9));
+      padding: 1.2rem .8rem .8rem;
+      opacity: 0;
+      transition: opacity .3s
+    }
+
+    .temple-photo:hover .temple-photo-caption {
+      opacity: 1
+    }
+
+    .temple-photo-caption span {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: .85rem;
+      color: var(--pale-gold)
+    }
+
+    .temple-photo-border {
+      position: absolute;
+      inset: 0;
+      border: 2px solid transparent;
+      transition: border-color .3s;
+      pointer-events: none
+    }
+
+    .temple-photo:hover .temple-photo-border {
+      border-color: rgba(201, 146, 42, .5)
+    }
+
+    /* AMENITIES */
+    #amenities {
+      background: var(--royal-brown);
+      padding: 6rem 2rem
+    }
+
+    #amenities .section-tag {
+      color: var(--light-gold)
+    }
+
+    #amenities .section-title {
+      color: var(--white)
+    }
+
+    .amenities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.2rem;
+      margin-top: 3rem
+    }
+
+    .amenity-card {
+      background: rgba(255, 253, 248, .07);
+      border: 1px solid rgba(201, 146, 42, .25);
+      padding: 2rem 1.2rem;
+      text-align: center;
+      transition: all .3s
+    }
+
+    .amenity-card:hover {
+      background: rgba(201, 146, 42, .15);
+      border-color: var(--deep-gold);
+      transform: translateY(-4px)
+    }
+
+    .amenity-emoji {
+      font-size: 2.2rem;
+      margin-bottom: .8rem;
+      display: block
+    }
+
+    .amenity-name {
+      font-family: 'Playfair Display', serif;
+      font-size: .95rem;
+      color: var(--pale-gold);
+      margin-bottom: .3rem
+    }
+
+    .amenity-desc {
+      font-size: .72rem;
+      color: rgba(245, 223, 160, .55);
+      line-height: 1.4
+    }
+
+    /* LOCATION */
+    #location {
+      background: var(--white);
+      padding: 6rem 2rem
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+      margin-top: 3rem
+    }
+
+    .advantage-list {
+      list-style: none
+    }
+
+    .advantage-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: .9rem 0;
+      border-bottom: 1px solid var(--parchment)
+    }
+
+    .advantage-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--pale-gold), var(--parchment));
+      border: 1px solid rgba(201, 146, 42, .35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--deep-gold)
+    }
+
+    .advantage-item h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: .9rem;
+      color: var(--royal-brown)
+    }
+
+    .advantage-item p {
+      font-size: .75rem;
+      color: var(--text-light)
+    }
+
+    .map-container {
+      border: 2px solid rgba(201, 146, 42, .3);
+      overflow: hidden
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+      display: block
+    }
+
+    .map-label {
+      background: var(--deep-gold);
+      color: var(--white);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      padding: .5rem 1rem;
+      text-align: center
+    }
+
+    /* TRANSPORT */
+    #transport {
+      background: var(--parchment);
+      padding: 6rem 2rem
+    }
+
+    .transport-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem
+    }
+
+    .transport-card {
+      background: var(--white);
+      border: 1px solid rgba(201, 146, 42, .2);
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: .8rem;
+      transition: all .3s
+    }
+
+    .transport-card:hover {
+      border-color: var(--deep-gold);
+      box-shadow: 0 8px 30px var(--shadow);
+      transform: translateY(-3px)
+    }
+
+    .transport-icon {
+      font-size: 2rem;
+      color: var(--deep-gold)
+    }
+
+    .transport-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--royal-brown)
+    }
+
+    .transport-card p {
+      font-size: .8rem;
+      color: var(--text-light);
+      line-height: 1.5
+    }
+
+    /* GALLERY */
+    #gallery {
+      background: var(--royal-brown);
+      padding: 6rem 2rem
+    }
+
+    #gallery .section-tag {
+      color: var(--light-gold)
+    }
+
+    #gallery .section-title {
+      color: var(--white)
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 3rem
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      border: 1px solid rgba(201, 146, 42, .2);
+      aspect-ratio: 1
+    }
+
+    .gallery-item:nth-child(1) {
+      grid-column: span 2;
+      aspect-ratio: auto;
+      min-height: 220px
+    }
+
+    .gallery-item:nth-child(4) {
+      grid-column: span 2;
+      aspect-ratio: auto;
+      min-height: 180px
+    }
+
+    .gallery-item-inner {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(201, 146, 42, .2), rgba(92, 58, 30, .3));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: .8rem
+    }
+
+    .gallery-emoji {
+      font-size: 3rem
+    }
+
+    .gallery-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: .9rem;
+      font-style: italic;
+      color: var(--pale-gold);
+      text-align: center;
+      padding: 0 1rem
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(44, 26, 14, .5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity .3s
+    }
+
+    .gallery-overlay i {
+      color: var(--pale-gold);
+      font-size: 2rem
+    }
+
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1
+    }
+
+    .gallery-item:hover {
+      border-color: var(--deep-gold)
+    }
+
+    /* ENQUIRY */
+    #enquiry {
+      background: var(--cream);
+      padding: 6rem 2rem
+    }
+
+    .enquiry-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 5rem;
+      align-items: start;
+      margin-top: 3rem
+    }
+
+    .enquiry-info p {
+      font-size: .9rem;
+      color: var(--text-light);
+      line-height: 1.7;
+      margin-bottom: 2rem
+    }
+
+    .enquiry-bullet {
+      display: flex;
+      flex-direction: column;
+      gap: .8rem
+    }
+
+    .enquiry-bullet li {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+      font-size: .85rem;
+      color: var(--text-mid)
+    }
+
+    .enquiry-bullet li i {
+      color: var(--emerald)
+    }
+
+    .enquiry-form {
+      background: var(--white);
+      border: 1px solid rgba(201, 146, 42, .25);
+      padding: 2.5rem;
+      position: relative
+    }
+
+    .enquiry-form::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--royal-brown), var(--deep-gold), var(--emerald))
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem
+    }
+
+    .form-group label {
+      display: block;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: .4rem
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: .75rem 1rem;
+      border: 1px solid var(--parchment-dark);
+      background: var(--cream);
+      font-family: 'Lato', sans-serif;
+      font-size: .9rem;
+      color: var(--text-dark);
+      outline: none;
+      transition: border-color .3s;
+      -webkit-appearance: none
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--deep-gold)
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 90px
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem
+    }
+
+    .btn-brochure {
+      width: 100%;
+      background: linear-gradient(135deg, var(--royal-brown), var(--deep-gold));
+      color: var(--white);
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+      font-size: .85rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      padding: 1rem;
+      border: none;
+      cursor: pointer;
+      transition: all .3s;
+      margin-top: .5rem
+    }
+
+    .btn-brochure:hover {
+      opacity: .9;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(92, 58, 30, .25)
+    }
+
+    /* CONTACT */
+    #contact {
+      background: var(--parchment);
+      padding: 6rem 2rem
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem
+    }
+
+    .contact-card {
+      background: var(--white);
+      border: 1px solid rgba(201, 146, 42, .2);
+      padding: 2rem;
+      text-align: center;
+      transition: all .3s
+    }
+
+    .contact-card:hover {
+      border-color: var(--deep-gold);
+      box-shadow: 0 8px 30px var(--shadow)
+    }
+
+    .contact-card-icon {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, var(--pale-gold), var(--parchment));
+      border: 1px solid var(--deep-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      font-size: 1.4rem;
+      color: var(--deep-gold)
+    }
+
+    .contact-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--royal-brown);
+      margin-bottom: .5rem
+    }
+
+    .contact-card p,
+    .contact-card a {
+      font-size: .85rem;
+      color: var(--text-light);
+      line-height: 1.6;
+      text-decoration: none;
+      display: block
+    }
+
+    .contact-card a:hover {
+      color: var(--deep-gold)
+    }
+
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      background: #25D366;
+      color: var(--white) !important;
+      padding: .6rem 1.5rem;
+      margin-top: .8rem;
+      font-weight: 700;
+      font-size: .8rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      transition: all .3s;
+      text-decoration: none !important
+    }
+
+    .whatsapp-btn:hover {
+      background: #128C7E;
+      transform: translateY(-2px)
+    }
+
+    .social-icons {
+      display: flex;
+      gap: .8rem;
+      justify-content: center;
+      margin-top: 1rem
+    }
+
+    .social-icon {
+      width: 38px;
+      height: 38px;
+      background: var(--parchment);
+      border: 1px solid rgba(201, 146, 42, .3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--royal-brown);
+      font-size: .9rem;
+      text-decoration: none;
+      transition: all .3s
+    }
+
+    .social-icon:hover {
+      background: var(--deep-gold);
+      color: var(--white);
+      border-color: var(--deep-gold)
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--text-dark);
+      color: rgba(255, 253, 248, .7);
+      padding: 0 2rem 2rem
+    }
+
+    .footer-stripe {
+      height: 6px;
+      background: repeating-linear-gradient(90deg, var(--deep-gold) 0, var(--deep-gold) 20px, var(--saffron) 20px, var(--saffron) 28px, var(--emerald) 28px, var(--emerald) 48px, var(--saffron) 48px, var(--saffron) 56px);
+      margin-bottom: 3rem
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(201, 146, 42, .2)
+    }
+
+    .footer-logo-main {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1.2rem;
+      color: var(--pale-gold);
+      display: block;
+      margin-bottom: .3rem
+    }
+
+    .footer-logo-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: .7rem;
+      letter-spacing: .18em;
+      color: var(--light-gold);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 1rem
+    }
+
+    .footer-brand p {
+      font-size: .82rem;
+      line-height: 1.7;
+      color: rgba(255, 253, 248, .5);
+      max-width: 280px
+    }
+
+    .footer-col h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: .9rem;
+      color: var(--pale-gold);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+      padding-bottom: .6rem;
+      border-bottom: 1px solid rgba(201, 146, 42, .25)
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .6rem
+    }
+
+    .footer-links a {
+      color: rgba(255, 253, 248, .5);
+      text-decoration: none;
+      font-size: .82rem;
+      transition: color .3s
+    }
+
+    .footer-links a:hover {
+      color: var(--light-gold)
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 2rem auto 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem
+    }
+
+    .footer-bottom p {
+      font-size: .75rem;
+      color: rgba(255, 253, 248, .35)
+    }
+
+    .footer-disclaimer {
+      font-size: .7rem;
+      color: rgba(255, 253, 248, .28);
+      max-width: 1200px;
+      margin: 1.5rem auto 0;
+      line-height: 1.6;
+      border-top: 1px solid rgba(255, 255, 255, .05);
+      padding-top: 1rem
+    }
+
+    /* ANIMATIONS */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity .7s ease, transform .7s ease
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:900px) {
+      .nav-links {
+        display: none
+      }
+
+      .hamburger {
+        display: flex
+      }
+
+      .about-grid,
+      .location-grid,
+      .enquiry-wrap,
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem
+      }
+
+      .cultural-grid {
+        grid-template-columns: 1fr
+      }
+
+      .temple-photos {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .gallery-item:nth-child(1),
+      .gallery-item:nth-child(4) {
+        grid-column: span 1
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr
+      }
+
+      .pattachitra-text {
+        padding: 2rem
+      }
+
+      .about-badge-float {
+        right: 1rem
+      }
+    }
+
+    @media(max-width:600px) {
+
+      section,
+      #hero {
+        padding: 4rem 1.2rem
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr
+      }
+
+      .form-row {
+        grid-template-columns: 1fr
+      }
+
+      .hero-btns {
+        flex-direction: column;
+        align-items: center
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center
+      }
+
+      .amenities-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .temple-photos {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .hero-deities {
+        flex-wrap: wrap;
+        gap: .8rem
+      }
+
+      .pattachitra-img-wrap {
+        height: auto
+      }
+
+      .pattachitra-overlay {
+        position: relative;
+        background: rgba(44, 26, 14, .92)
+      }
+    }
+  </style>
 </head>
+
 <body class="lotus-bg">
 
-<!-- NAVBAR -->
-<nav id="navbar">
-  <div class="nav-inner">
-    <div class="nav-logo">
-      <div class="nav-logo-emblem">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Neelachakra_of_Jagannath_temple_Puri.JPG/100px-Neelachakra_of_Jagannath_temple_Puri.JPG"
-             alt="Nila Chakra – Jagannath Temple Puri">
-      </div>
-      <div class="nav-logo-text">
-        <span class="nav-logo-main">Mahaveer Palace</span>
-        <span class="nav-logo-sub">by Nandan Omacs Properties</span>
-      </div>
-    </div>
-    <ul class="nav-links">
-      <li><a href="#hero">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#flats">Flats</a></li>
-      <li><a href="#amenities">Amenities</a></li>
-      <li><a href="#location">Location</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#contact" class="nav-cta">Contact</a></li>
-    </ul>
-    <button class="hamburger" id="menuBtn" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-
-<div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-close" id="menuClose">✕</button>
-  <a href="#hero" onclick="closeMobileMenu()">Home</a>
-  <a href="#about" onclick="closeMobileMenu()">About</a>
-  <a href="#flats" onclick="closeMobileMenu()">Flats</a>
-  <a href="#amenities" onclick="closeMobileMenu()">Amenities</a>
-  <a href="#location" onclick="closeMobileMenu()">Location</a>
-  <a href="#gallery" onclick="closeMobileMenu()">Gallery</a>
-  <a href="#enquiry" onclick="closeMobileMenu()">Enquiry</a>
-  <a href="#contact" onclick="closeMobileMenu()">Contact</a>
-</div>
-
-<!-- HERO — Actual Jagannath Temple photo as background -->
-<section id="hero">
-  <div class="hero-bg-img"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <div class="hero-badge">✦ Upcoming Premium Residential Project · Cuttack, Odisha ✦</div>
-    <h1 class="hero-title">Welcome to<br><span>Mahaveer Palace</span></h1>
-    <div class="hero-divider">
-      <span style="color:var(--light-gold);font-size:1.5rem">🕉</span>
-    </div>
-    <p class="hero-sub">Where Tradition Meets Modern Living</p>
-    <div class="hero-deities">
-      <div class="hero-deity-pill"><span style="font-size:1.2rem">🌸</span><span>ଶ୍ରୀ ଜଗନ୍ନାଥ</span></div>
-      <div class="hero-deity-pill"><span style="font-size:1.2rem">🌿</span><span>ଶ୍ରୀ ବଳଭଦ୍ର</span></div>
-      <div class="hero-deity-pill"><span style="font-size:1.2rem">🌺</span><span>ଦେବୀ ସୁଭଦ୍ରା</span></div>
-    </div>
-    <div class="hero-btns">
-      <a href="#flats" class="btn-primary"><i class="fas fa-building" style="margin-right:.5rem"></i>View Flats</a>
-      <a href="#enquiry" class="btn-outline"><i class="fas fa-file-download" style="margin-right:.5rem"></i>Download Brochure</a>
-    </div>
-  </div>
-  <div class="hero-scroll"><span>Discover</span><i class="fas fa-chevron-down"></i></div>
-  <div class="hero-bottom-border"></div>
-</section>
-
-<!-- CULTURAL STRIP — Real Jagannath/Pattachitra photos -->
-<section id="cultural-strip">
-  <div class="cultural-strip-header">
-    <h2>Rooted in the Spiritual Heartland of Odisha</h2>
-    <p>Mahaveer Palace draws its soul from the eternal legacy of Lord Jagannath — Swami of the Universe</p>
-  </div>
-  <div class="cultural-grid">
-    <div class="cultural-card fade-in">
-      <div class="cultural-img-frame">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Puri_jagannath_temple_from_front.jpg/640px-Puri_jagannath_temple_from_front.jpg"
-             alt="Shree Jagannath Temple Puri front" loading="lazy">
-      </div>
-      <div class="cultural-card-title">Shree Jagannath Temple, Puri</div>
-      <div class="cultural-card-sub">The Sacred Dhama — one of India's Char Dhams</div>
-    </div>
-    <div class="cultural-card fade-in">
-      <div class="cultural-img-frame">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Neelachakra_of_Jagannath_temple_Puri.JPG/640px-Neelachakra_of_Jagannath_temple_Puri.JPG"
-             alt="Neelachakra Jagannath Temple Puri" loading="lazy">
-      </div>
-      <div class="cultural-card-title">The Sacred Nila Chakra</div>
-      <div class="cultural-card-sub">Eight-spoked wheel of Vishnu — symbol of cosmic order</div>
-    </div>
-    <div class="cultural-card fade-in">
-      <div class="cultural-img-frame">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Pattachitra_from_Odisha_in_Subhas_Chandra_Bose%27s_parental_home%2C_Cuttack%2C_Odisha%2C_India.jpg/640px-Pattachitra_from_Odisha_in_Subhas_Chandra_Bose%27s_parental_home%2C_Cuttack%2C_Odisha%2C_India.jpg"
-             alt="Pattachitra Odisha Cuttack" loading="lazy">
-      </div>
-      <div class="cultural-card-title">Pattachitra — Living Art of Odisha</div>
-      <div class="cultural-card-sub">Centuries-old scroll painting tradition from Cuttack</div>
-    </div>
-  </div>
-  <p style="text-align:center;font-size:.62rem;color:rgba(245,223,160,.28);margin-top:1.5rem;font-style:italic;">
-    Images: Wikimedia Commons — CC BY-SA 3.0/4.0 | Neelachakra © Aditya Mahar | Pattachitra © Biswarup Ganguly
-  </p>
-</section>
-
-<!-- PATTACHITRA CULTURAL BANNER -->
-<section id="pattachitra-banner">
-  <div class="pattachitra-img-wrap">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Puri_jagannath_temple_from_front.jpg/1280px-Puri_jagannath_temple_from_front.jpg"
-         alt="Jagannath Temple Puri backdrop" loading="lazy">
-    <div class="pattachitra-overlay">
-      <div class="pattachitra-text">
-        <span class="section-tag">✦ Our Cultural Heritage</span>
-        <h2>Built Upon the Blessings of <span>Shree Jagannath</span></h2>
-        <p>"Lord Jagannath — whose temple rises 65 metres above Puri — is the eternal guardian of Odisha. Mahaveer Palace is inspired by this timeless grandeur and the sacred Kalinga architectural tradition."</p>
-        <div class="pattachitra-fact-row">
-          <div class="pattachitra-fact"><strong>12th C</strong><span>Temple Built</span></div>
-          <div class="pattachitra-fact"><strong>65m</strong><span>Temple Height</span></div>
-          <div class="pattachitra-fact"><strong>56</strong><span>Bhog Varieties</span></div>
-          <div class="pattachitra-fact"><strong>4</strong><span>Char Dham</span></div>
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <div class="nav-logo-emblem">
+          <img src="images/logo.png" alt="Nandan Omacs Properties">
+        </div>
+        <div class="nav-logo-text">
+          <span class="nav-logo-main">Mahaveer Palace</span>
+          <span class="nav-logo-sub">by Nandan Omacs Properties</span>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="about-grid">
-    <div class="about-photo-mosaic fade-in">
-      <div class="mosaic-img">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Neelachakra_of_Jagannath_temple_Puri.JPG/480px-Neelachakra_of_Jagannath_temple_Puri.JPG"
-             alt="Nila Chakra Puri" loading="lazy">
-        <div class="mosaic-gold-label"><span>Nila Chakra — Sacred Wheel, Puri</span></div>
-      </div>
-      <div class="mosaic-img">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Pattachitra_from_Odisha_in_Subhas_Chandra_Bose%27s_parental_home%2C_Cuttack%2C_Odisha%2C_India.jpg/480px-Pattachitra_from_Odisha_in_Subhas_Chandra_Bose%27s_parental_home%2C_Cuttack%2C_Odisha%2C_India.jpg"
-             alt="Pattachitra Cuttack" loading="lazy">
-        <div class="mosaic-gold-label"><span>Pattachitra Art — Cuttack</span></div>
-      </div>
-      <div class="mosaic-img">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Puri_jagannath_temple_from_front.jpg/480px-Puri_jagannath_temple_from_front.jpg"
-             alt="Jagannath Temple Puri" loading="lazy">
-        <div class="mosaic-gold-label"><span>Shree Jagannath Dham</span></div>
-      </div>
-      <div class="about-badge-float"><strong>2025</strong><span>Launch Year</span></div>
-    </div>
-    <div class="about-text fade-in">
-      <span class="section-tag">✦ Our Vision</span>
-      <h2 class="section-title">A Legacy Built in <em>Stone & Spirit</em></h2>
-      <div class="divider"><span class="divider-icon">✦</span></div>
-      <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--text-light);line-height:1.8;margin-bottom:1.2rem;font-style:italic;">
-        "Mahaveer Palace is more than a home — it is a sanctuary inspired by the grandeur of Odisha's royal heritage, crafted for those who demand serenity and sophistication."
-      </p>
-      <p style="font-size:.9rem;color:var(--text-light);line-height:1.75;margin-bottom:1.5rem;">
-        Developed by <strong style="color:var(--royal-brown)">Nandan Omacs Properties</strong>, Mahaveer Palace is an upcoming premium residential project designed for comfort, luxury, and seamless connectivity. Located in the sacred cultural heartland of Odisha — home of the revered Shree Jagannath Dham and the ancient Pattachitra tradition — every corner of this project reflects this eternal heritage.
-      </p>
-      <div class="about-features">
-        <div class="about-feat"><div class="about-feat-icon"><i class="fas fa-shield-halved"></i></div><div><h4>RERA Approved</h4><p>Fully compliant & transparent</p></div></div>
-        <div class="about-feat"><div class="about-feat-icon"><i class="fas fa-leaf"></i></div><div><h4>Eco-Friendly</h4><p>Green spaces & sustainable design</p></div></div>
-        <div class="about-feat"><div class="about-feat-icon"><i class="fas fa-star"></i></div><div><h4>Premium Quality</h4><p>International grade finishes</p></div></div>
-        <div class="about-feat"><div class="about-feat-icon"><i class="fas fa-om"></i></div><div><h4>Cultural Soul</h4><p>Inspired by Kalinga architecture</p></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FLATS -->
-<section id="flats">
-  <div class="container">
-    <div class="section-header fade-in">
-      <span class="section-tag">✦ Residential Configuration</span>
-      <h2 class="section-title">Choose Your <em>Dream Home</em></h2>
-      <div class="divider"><span class="divider-icon">✦</span></div>
-      <p class="section-sub">From smart compact living to luxurious penthouses — find the space that resonates with your soul.</p>
-    </div>
-    <div class="flats-grid">
-      <div class="flat-card fade-in">
-        <div class="flat-card-header"><div class="flat-badge">Compact</div><div class="flat-icon">🏠</div><div class="flat-name">1 BHK</div><div class="flat-tagline">Smart Compact Living</div></div>
-        <div class="flat-card-body">
-          <div class="flat-specs"><div class="flat-spec"><span class="flat-spec-val">550–650</span><span class="flat-spec-label">Sq. Ft.</span></div><div class="flat-spec"><span class="flat-spec-val">₹28L+</span><span class="flat-spec-label">Starting</span></div></div>
-          <ul class="flat-features"><li><i class="fas fa-check"></i>Modular Kitchen with Chimney</li><li><i class="fas fa-check"></i>Vitrified Tile Flooring</li><li><i class="fas fa-check"></i>Attached Bathroom</li><li><i class="fas fa-check"></i>Balcony with City View</li><li><i class="fas fa-check"></i>24×7 Security & CCTV</li></ul>
-          <a href="#enquiry" class="btn-enquire">Enquire Now <i class="fas fa-arrow-right" style="margin-left:.4rem;font-size:.75rem"></i></a>
-        </div>
-      </div>
-      <div class="flat-card fade-in">
-        <div class="flat-card-header"><div class="flat-badge" style="background:var(--deep-gold)">Popular</div><div class="flat-icon">🏡</div><div class="flat-name">2 BHK</div><div class="flat-tagline">Family Comfort Homes</div></div>
-        <div class="flat-card-body">
-          <div class="flat-specs"><div class="flat-spec"><span class="flat-spec-val">850–1050</span><span class="flat-spec-label">Sq. Ft.</span></div><div class="flat-spec"><span class="flat-spec-val">₹45L+</span><span class="flat-spec-label">Starting</span></div></div>
-          <ul class="flat-features"><li><i class="fas fa-check"></i>2 Spacious Bedrooms</li><li><i class="fas fa-check"></i>Premium Modular Kitchen</li><li><i class="fas fa-check"></i>2 Attached Bathrooms</li><li><i class="fas fa-check"></i>Master Bedroom Wardrobe</li><li><i class="fas fa-check"></i>Large Drawing & Dining</li></ul>
-          <a href="#enquiry" class="btn-enquire">Enquire Now <i class="fas fa-arrow-right" style="margin-left:.4rem;font-size:.75rem"></i></a>
-        </div>
-      </div>
-      <div class="flat-card fade-in">
-        <div class="flat-card-header"><div class="flat-badge" style="background:var(--royal-brown)">Premium</div><div class="flat-icon">🏢</div><div class="flat-name">3 BHK</div><div class="flat-tagline">Premium Spacious Flats</div></div>
-        <div class="flat-card-body">
-          <div class="flat-specs"><div class="flat-spec"><span class="flat-spec-val">1300–1600</span><span class="flat-spec-label">Sq. Ft.</span></div><div class="flat-spec"><span class="flat-spec-val">₹72L+</span><span class="flat-spec-label">Starting</span></div></div>
-          <ul class="flat-features"><li><i class="fas fa-check"></i>3 Luxury Bedrooms</li><li><i class="fas fa-check"></i>Italian Marble Flooring</li><li><i class="fas fa-check"></i>Designer Bathrooms</li><li><i class="fas fa-check"></i>Dedicated Servant Room</li><li><i class="fas fa-check"></i>Wide Private Balcony</li></ul>
-          <a href="#enquiry" class="btn-enquire">Enquire Now <i class="fas fa-arrow-right" style="margin-left:.4rem;font-size:.75rem"></i></a>
-        </div>
-      </div>
-      <div class="flat-card fade-in">
-        <div class="flat-card-header"><div class="flat-badge" style="background:linear-gradient(135deg,var(--deep-gold),var(--royal-brown))">Luxury</div><div class="flat-icon">👑</div><div class="flat-name">Penthouse</div><div class="flat-tagline">Terrace Flats – Luxury Living</div></div>
-        <div class="flat-card-body">
-          <div class="flat-specs"><div class="flat-spec"><span class="flat-spec-val">2200+</span><span class="flat-spec-label">Sq. Ft.</span></div><div class="flat-spec"><span class="flat-spec-val">₹1.4Cr+</span><span class="flat-spec-label">Starting</span></div></div>
-          <ul class="flat-features"><li><i class="fas fa-check"></i>Private Terrace Garden</li><li><i class="fas fa-check"></i>Panoramic City Views</li><li><i class="fas fa-check"></i>Private Plunge Pool Option</li><li><i class="fas fa-check"></i>Smart Home Automation</li><li><i class="fas fa-check"></i>Double-Height Living Room</li></ul>
-          <a href="#enquiry" class="btn-enquire">Enquire Now <i class="fas fa-arrow-right" style="margin-left:.4rem;font-size:.75rem"></i></a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TEMPLE PHOTO GALLERY STRIP -->
-<section id="temple-strip">
-  <div class="container">
-    <div class="section-header fade-in">
-      <span class="section-tag" style="color:var(--light-gold)">✦ The Land We Call Home</span>
-      <h2 class="section-title" style="color:var(--white)">Pride of <em style="color:var(--light-gold)">Odisha</em></h2>
-      <div class="divider"><span class="divider-icon" style="color:var(--light-gold)">✦</span></div>
-      <p class="section-sub" style="color:rgba(255,253,248,.55);margin:0 auto;">Odisha — the land of Kalinga, Konark, Pattachitra, and the eternal Lord Jagannath. Mahaveer Palace stands proud in this sacred heritage.</p>
-    </div>
-    <div class="temple-photos">
-      <div class="temple-photo fade-in">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Puri_jagannath_temple_from_front.jpg/480px-Puri_jagannath_temple_from_front.jpg" alt="Jagannath Temple Puri" loading="lazy">
-        <div class="temple-photo-border"></div>
-        <div class="temple-photo-caption"><span>Shree Jagannath Temple, Puri</span></div>
-      </div>
-      <div class="temple-photo fade-in">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Neelachakra_of_Jagannath_temple_Puri.JPG/480px-Neelachakra_of_Jagannath_temple_Puri.JPG" alt="Neelachakra Puri" loading="lazy">
-        <div class="temple-photo-border"></div>
-        <div class="temple-photo-caption"><span>Nila Chakra — Sacred Wheel</span></div>
-      </div>
-      <div class="temple-photo fade-in">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Pattachitra_from_Odisha_in_Subhas_Chandra_Bose%27s_parental_home%2C_Cuttack%2C_Odisha%2C_India.jpg/480px-Pattachitra_from_Odisha_in_Subhas_Chandra_Bose%27s_parental_home%2C_Cuttack%2C_Odisha%2C_India.jpg" alt="Pattachitra art Odisha" loading="lazy">
-        <div class="temple-photo-border"></div>
-        <div class="temple-photo-caption"><span>Pattachitra — Classical Art of Odisha</span></div>
-      </div>
-      <div class="temple-photo fade-in">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Jagannath_Theme_in_Pattachitra-2.jpg/480px-Jagannath_Theme_in_Pattachitra-2.jpg" alt="Lord Jagannath Pattachitra" loading="lazy">
-        <div class="temple-photo-border"></div>
-        <div class="temple-photo-caption"><span>Lord Jagannath in Pattachitra</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- AMENITIES -->
-<section id="amenities">
-  <div class="container">
-    <div class="section-header fade-in">
-      <span class="section-tag">✦ World-Class Facilities</span>
-      <h2 class="section-title" style="color:var(--white)">Amenities That <em style="color:var(--light-gold)">Elevate Life</em></h2>
-      <div class="divider"><span class="divider-icon" style="color:var(--light-gold)">✦</span></div>
-      <p class="section-sub" style="color:rgba(255,253,248,.6);margin:0 auto;">Every facility thoughtfully designed for comfort, leisure, and wellbeing.</p>
-    </div>
-    <div class="amenities-grid">
-      <div class="amenity-card fade-in"><span class="amenity-emoji">🌿</span><div class="amenity-name">Rooftop Terrace Garden</div><div class="amenity-desc">Lush green oasis above the city</div></div>
-      <div class="amenity-card fade-in"><span class="amenity-emoji">🏋️</span><div class="amenity-name">Gym & Fitness Center</div><div class="amenity-desc">Modern equipment & wellness zone</div></div>
-      <div class="amenity-card fade-in"><span class="amenity-emoji">🎠</span><div class="amenity-name">Children Play Area</div><div class="amenity-desc">Safe, vibrant & creative playground</div></div>
-      <div class="amenity-card fade-in"><span class="amenity-emoji">🛡️</span><div class="amenity-name">24×7 Security</div><div class="amenity-desc">CCTV, intercom & trained guards</div></div>
-      <div class="amenity-card fade-in"><span class="amenity-emoji">🚗</span><div class="amenity-name">Parking Facility</div><div class="amenity-desc">Ample covered & open parking</div></div>
-      <div class="amenity-card fade-in"><span class="amenity-emoji">⚡</span><div class="amenity-name">Lift & Power Backup</div><div class="amenity-desc">High-speed lifts, 100% DG backup</div></div>
-      <div class="amenity-card fade-in"><span class="amenity-emoji">🎪</span><div class="amenity-name">Community Hall</div><div class="amenity-desc">Venue for celebrations & events</div></div>
-      <div class="amenity-card fade-in"><span class="amenity-emoji">🕉️</span><div class="amenity-name">Temple & Meditation Zone</div><div class="amenity-desc">Sacred space for peace & prayer</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- LOCATION -->
-<section id="location">
-  <div class="container">
-    <div class="section-header fade-in">
-      <span class="section-tag">✦ Strategic Location</span>
-      <h2 class="section-title">Everything You Need, <em>Close By</em></h2>
-      <div class="divider"><span class="divider-icon">✦</span></div>
-    </div>
-    <div class="location-grid">
-      <div class="fade-in">
-        <h3 style="font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--royal-brown);margin-bottom:1.5rem;">Location Advantages</h3>
-        <ul class="advantage-list">
-          <li class="advantage-item"><div class="advantage-icon"><i class="fas fa-graduation-cap"></i></div><div><h4>Schools & Colleges</h4><p>Top institutions within 2–5 km</p></div></li>
-          <li class="advantage-item"><div class="advantage-icon"><i class="fas fa-hospital"></i></div><div><h4>Hospitals & Healthcare</h4><p>Leading hospitals close by</p></div></li>
-          <li class="advantage-item"><div class="advantage-icon"><i class="fas fa-shopping-cart"></i></div><div><h4>Markets & Malls</h4><p>Daily essentials & retail hubs nearby</p></div></li>
-          <li class="advantage-item"><div class="advantage-icon"><i class="fas fa-train"></i></div><div><h4>Railway Station</h4><p>Convenient rail connectivity</p></div></li>
-          <li class="advantage-item"><div class="advantage-icon"><i class="fas fa-bus"></i></div><div><h4>Bus Stand</h4><p>Major bus terminus easily reachable</p></div></li>
-          <li class="advantage-item"><div class="advantage-icon"><i class="fas fa-plane"></i></div><div><h4>Airport</h4><p>Bhubaneswar Airport ~45 mins drive</p></div></li>
-          <li class="advantage-item"><div class="advantage-icon"><i class="fas fa-om"></i></div><div><h4>Jagannath Dham</h4><p>Puri Sri Mandir ~90 mins drive</p></div></li>
-        </ul>
-      </div>
-      <div class="fade-in">
-        <div class="map-container">
-          <div class="map-label">📍 Mahaveer Palace – Puri, Odisha</div>
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59872.97534487989!2d85.79065395!3d19.8133822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a19a50398ad41f3%3A0xc5549ca42d3ab8e5!2sPuri%2C%20Odisha!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mahaveer Palace Location"></iframe>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TRANSPORT -->
-<section id="transport">
-  <div class="container">
-    <div class="section-header fade-in">
-      <span class="section-tag">✦ Connectivity</span>
-      <h2 class="section-title">Well <em>Connected</em> to the City</h2>
-      <div class="divider"><span class="divider-icon">✦</span></div>
-    </div>
-    <div class="transport-grid">
-      <div class="transport-card fade-in"><div class="transport-icon">🛣️</div><h3>Highway Access</h3><p>Direct proximity to NH-16 & major state highways ensuring smooth intercity travel.</p></div>
-      <div class="transport-card fade-in"><div class="transport-icon">🚌</div><h3>Public Transport</h3><p>Regular city buses, shared autos and e-rickshaws available at your doorstep.</p></div>
-      <div class="transport-card fade-in"><div class="transport-icon">🚕</div><h3>Cab & Auto</h3><p>Ola, Uber and local auto services readily available for excellent last-mile connectivity.</p></div>
-      <div class="transport-card fade-in"><div class="transport-icon">🚇</div><h3>Future Metro</h3><p>Upcoming metro rail in Bhubaneswar-Cuttack corridor set to boost connectivity further.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- GALLERY -->
-<section id="gallery">
-  <div class="container">
-    <div class="section-header fade-in">
-      <span class="section-tag">✦ Visual Journey</span>
-      <h2 class="section-title" style="color:var(--white)">A Glimpse of Your <em style="color:var(--light-gold)">Future Home</em></h2>
-      <div class="divider"><span class="divider-icon" style="color:var(--light-gold)">✦</span></div>
-    </div>
-    <div class="gallery-grid">
-      <div class="gallery-item fade-in"><div class="gallery-item-inner"><span class="gallery-emoji">🏗️</span><span class="gallery-label">Construction Progress – Foundation & Superstructure</span></div><div class="gallery-overlay"><i class="fas fa-expand"></i></div></div>
-      <div class="gallery-item fade-in"><div class="gallery-item-inner"><span class="gallery-emoji">🛋️</span><span class="gallery-label">Living Room Sample Interior</span></div><div class="gallery-overlay"><i class="fas fa-expand"></i></div></div>
-      <div class="gallery-item fade-in"><div class="gallery-item-inner"><span class="gallery-emoji">🍳</span><span class="gallery-label">Premium Modular Kitchen</span></div><div class="gallery-overlay"><i class="fas fa-expand"></i></div></div>
-      <div class="gallery-item fade-in"><div class="gallery-item-inner"><span class="gallery-emoji">🌇</span><span class="gallery-label">Rooftop Terrace View & Garden</span></div><div class="gallery-overlay"><i class="fas fa-expand"></i></div></div>
-      <div class="gallery-item fade-in"><div class="gallery-item-inner"><span class="gallery-emoji">🏊</span><span class="gallery-label">Amenity Zone</span></div><div class="gallery-overlay"><i class="fas fa-expand"></i></div></div>
-      <div class="gallery-item fade-in"><div class="gallery-item-inner"><span class="gallery-emoji">🛏️</span><span class="gallery-label">Master Bedroom Design</span></div><div class="gallery-overlay"><i class="fas fa-expand"></i></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ENQUIRY -->
-<section id="enquiry">
-  <div class="container">
-    <div class="enquiry-wrap">
-      <div class="fade-in">
-        <span class="section-tag">✦ Get in Touch</span>
-        <h2 class="section-title">Request Your <em>Free Brochure</em></h2>
-        <div class="divider" style="justify-content:flex-start;"><span class="divider-icon">✦</span></div>
-        <div class="enquiry-info">
-          <p>Take the first step toward your dream home. Our property advisor will reach out with the complete brochure, pricing details, and a personalised walkthrough.</p>
-          <ul class="enquiry-bullet">
-            <li><i class="fas fa-check-circle"></i>Detailed floor plans & layouts</li>
-            <li><i class="fas fa-check-circle"></i>Transparent pricing & payment plans</li>
-            <li><i class="fas fa-check-circle"></i>RERA details & legal documents</li>
-            <li><i class="fas fa-check-circle"></i>Site visit assistance on request</li>
-            <li><i class="fas fa-check-circle"></i>Home loan assistance available</li>
-          </ul>
-        </div>
-        <div style="margin-top:2rem;padding:1.2rem;background:linear-gradient(135deg,var(--pale-gold),var(--parchment));border-left:3px solid var(--deep-gold);">
-          <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.95rem;color:var(--royal-brown);line-height:1.6;">
-            🕉 <strong>ଜୟ ଜଗନ୍ନାଥ</strong> — May the blessings of Lord Jagannath guide you to your perfect home at Mahaveer Palace.
-          </p>
-        </div>
-      </div>
-      <div class="enquiry-form fade-in">
-        <h3 style="font-family:'Playfair Display',serif;color:var(--royal-brown);font-size:1.2rem;margin-bottom:1.5rem;">Get Brochure & Pricing Details</h3>
-        <form onsubmit="handleSubmit(event)">
-          <div class="form-row">
-            <div class="form-group"><label>Full Name *</label><input type="text" placeholder="Your full name" required></div>
-            <div class="form-group"><label>Phone Number *</label><input type="tel" placeholder="+91 XXXXX XXXXX" required></div>
-          </div>
-          <div class="form-group"><label>Email Address</label><input type="email" placeholder="your@email.com"></div>
-          <div class="form-group"><label>Flat Type Interested *</label>
-            <select required>
-              <option value="">Select flat type...</option>
-              <option>1 BHK – Smart Compact Living</option>
-              <option>2 BHK – Family Comfort Homes</option>
-              <option>3 BHK – Premium Spacious Flats</option>
-              <option>Penthouse / Terrace Flat</option>
-              <option>Not decided yet</option>
-            </select>
-          </div>
-          <div class="form-group"><label>Message / Query</label><textarea placeholder="Any specific requirements or questions..."></textarea></div>
-          <button type="submit" class="btn-brochure"><i class="fas fa-paper-plane" style="margin-right:.6rem"></i>Get Brochure Now</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="container">
-    <div class="section-header fade-in">
-      <span class="section-tag">✦ Reach Us</span>
-      <h2 class="section-title">We're Here to <em>Help You</em></h2>
-      <div class="divider"><span class="divider-icon">✦</span></div>
-    </div>
-    <div class="contact-grid">
-      <div class="contact-card fade-in"><div class="contact-card-icon"><i class="fas fa-map-marker-alt"></i></div><h3>Office Address</h3><p>Nandan Omacs Properties<br>Cuttack, Odisha – 753001<br>India</p></div>
-      <div class="contact-card fade-in"><div class="contact-card-icon"><i class="fas fa-phone-alt"></i></div><h3>Phone Numbers</h3><a href="tel:+919XXXXXXXXX">+91 9XXXXXXXXX</a><a href="tel:+916XXXXXXXXX">+91 6XXXXXXXXX</a><p style="margin-top:.5rem;font-size:.75rem;">Mon – Sat: 9:00 AM – 7:00 PM</p></div>
-      <div class="contact-card fade-in"><div class="contact-card-icon"><i class="fab fa-whatsapp"></i></div><h3>WhatsApp</h3><p>Chat with us instantly for quick enquiries and brochure requests.</p><a href="https://wa.me/919XXXXXXXXX?text=Hi%2C%20I'm%20interested%20in%20Mahaveer%20Palace" class="whatsapp-btn"><i class="fab fa-whatsapp"></i>Chat on WhatsApp</a></div>
-      <div class="contact-card fade-in"><div class="contact-card-icon"><i class="fas fa-share-nodes"></i></div><h3>Follow Us</h3><p>Stay updated with construction progress & offers.</p><div class="social-icons"><a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a><a href="#" class="social-icon"><i class="fab fa-instagram"></i></a><a href="#" class="social-icon"><i class="fab fa-youtube"></i></a><a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-stripe"></div>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div style="display:flex;align-items:center;gap:.8rem;margin-bottom:.8rem;">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Neelachakra_of_Jagannath_temple_Puri.JPG/80px-Neelachakra_of_Jagannath_temple_Puri.JPG"
-             alt="Nila Chakra" style="width:38px;height:38px;object-fit:cover;border-radius:50%;border:1px solid rgba(201,146,42,.4);" loading="lazy">
-        <div><span class="footer-logo-main">Mahaveer Palace</span><span class="footer-logo-sub">by Nandan Omacs Properties</span></div>
-      </div>
-      <p>A premium residential project rooted in the royal heritage of Odisha — inspired by the eternal Lord Jagannath and the Kalinga tradition — crafted for luxury, serenity, and modern living.</p>
-      <div class="social-icons" style="justify-content:flex-start;margin-top:1rem;">
-        <a href="#" class="social-icon" style="background:rgba(255,255,255,.06);border-color:rgba(201,146,42,.2);color:var(--pale-gold)"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="social-icon" style="background:rgba(255,255,255,.06);border-color:rgba(201,146,42,.2);color:var(--pale-gold)"><i class="fab fa-instagram"></i></a>
-        <a href="#" class="social-icon" style="background:rgba(255,255,255,.06);border-color:rgba(201,146,42,.2);color:var(--pale-gold)"><i class="fab fa-youtube"></i></a>
-      </div>
-    </div>
-    <div class="footer-col">
-      <h4>Quick Links</h4>
-      <ul class="footer-links">
+      <ul class="nav-links">
         <li><a href="#hero">Home</a></li>
-        <li><a href="#about">About Project</a></li>
-        <li><a href="#flats">Types of Flats</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#flats">Flats</a></li>
         <li><a href="#amenities">Amenities</a></li>
         <li><a href="#location">Location</a></li>
         <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#enquiry">Get Brochure</a></li>
-        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
       </ul>
+      <button class="hamburger" id="menuBtn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <div class="footer-col">
-      <h4>Flat Types</h4>
-      <ul class="footer-links">
-        <li><a href="#flats">1 BHK – Smart Living</a></li>
-        <li><a href="#flats">2 BHK – Family Homes</a></li>
-        <li><a href="#flats">3 BHK – Premium Flats</a></li>
-        <li><a href="#flats">Penthouse / Terrace</a></li>
-      </ul>
-      <h4 style="margin-top:1.5rem;">Contact</h4>
-      <ul class="footer-links">
-        <li><a href="tel:+919XXXXXXXXX">+91 9XXXXXXXXX</a></li>
-        <li><a href="mailto:info@nandanomacs.com">info@nandanomacs.com</a></li>
-        <li><a href="#">Cuttack, Odisha</a></li>
-      </ul>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="menuClose">✕</button>
+    <a href="#hero" onclick="closeMobileMenu()">Home</a>
+    <a href="#about" onclick="closeMobileMenu()">About</a>
+    <a href="#flats" onclick="closeMobileMenu()">Flats</a>
+    <a href="#amenities" onclick="closeMobileMenu()">Amenities</a>
+    <a href="#location" onclick="closeMobileMenu()">Location</a>
+    <a href="#gallery" onclick="closeMobileMenu()">Gallery</a>
+    <a href="#enquiry" onclick="closeMobileMenu()">Enquiry</a>
+    <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+  </div>
+
+  <!-- HERO — Actual Jagannath Temple photo as background -->
+  <section id="hero">
+    <div class="hero-bg-img"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge">✦ Upcoming Premium Residential Project · Cuttack, Odisha ✦</div>
+      <h1 class="hero-title">Welcome to<br><span>Mahaveer</span> <span style="color:var(--light-gold)">Palace</span></h1>
+      <div class="hero-divider">
+        <span style="color:var(--light-gold);font-size:1.5rem">🕉</span>
+      </div>
+      <p class="hero-sub">Where Tradition Meets Modern Living</p>
+      <div class="hero-deities">
+        <div class="hero-deity-pill">
+          <img src="images/jagannath.png" alt="Sri Jagannath" class="deity-icon deity-icon-pulse">
+          <span>ଶ୍ରୀ ଜଗନ୍ନାଥ</span>
+        </div>
+        <div class="hero-deity-pill">
+          <img src="images/balabhadra.png" alt="Sri Balabhadra" class="deity-icon deity-icon-pulse" style="animation-delay:.3s">
+          <span>ଶ୍ରୀ ବଳଭଦ୍ର</span>
+        </div>
+        <div class="hero-deity-pill">
+          <img src="images/subhadra.png" alt="Devi Subhadra" class="deity-icon deity-icon-pulse" style="animation-delay:.6s">
+          <span>ଦେବୀ ସୁଭଦ୍ରା</span>
+        </div>
+      </div>
+      <div class="hero-btns">
+        <a href="#flats" class="btn-primary"><i class="fas fa-building" style="margin-right:.5rem"></i>View Flats</a>
+        <a href="#enquiry" class="btn-outline"><i class="fas fa-file-download" style="margin-right:.5rem"></i>Download
+          Brochure</a>
+      </div>
+    </div>
+    <div class="hero-scroll"><span>Discover</span><i class="fas fa-chevron-down"></i></div>
+    <div class="hero-bottom-border"></div>
+  </section>
+
+  <!-- CULTURAL STRIP — Real Jagannath/Pattachitra photos -->
+  <section id="cultural-strip">
+    <div class="cultural-strip-header">
+      <h2>Rooted in the Spiritual Heartland of Odisha</h2>
+      <p>Mahaveer Palace draws its soul from the eternal legacy of Lord Jagannath — Swami of the Universe</p>
+    </div>
+    <div class="cultural-grid">
+      <div class="cultural-card fade-in">
+        <div class="cultural-img-frame">
+          <img
+            src="images/jagannath_temple.png"
+            alt="Shree Jagannath Temple Puri front" loading="lazy">
+        </div>
+        <div class="cultural-card-title">Shree Jagannath Temple, Puri</div>
+        <div class="cultural-card-sub">The Sacred Dhama — one of India's Char Dhams</div>
+      </div>
+      <div class="cultural-card fade-in">
+        <div class="cultural-img-frame">
+          <img
+            src="images/nila_chakra.png"
+            alt="Nila Chakra atop Jagannath Temple Puri" loading="lazy">
+        </div>
+        <div class="cultural-card-title">The Sacred Nila Chakra</div>
+        <div class="cultural-card-sub">Eight-spoked wheel of Vishnu — symbol of cosmic order</div>
+      </div>
+      <div class="cultural-card fade-in">
+        <div class="cultural-img-frame">
+          <img
+            src="images/pattachitra_art.png"
+            alt="Pattachitra Art Odisha" loading="lazy">
+        </div>
+        <div class="cultural-card-title">Pattachitra — Living Art of Odisha</div>
+        <div class="cultural-card-sub">Centuries-old scroll painting tradition from Cuttack</div>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:.62rem;color:rgba(245,223,160,.28);margin-top:1.5rem;font-style:italic;">
+      Images: Wikimedia Commons — CC BY-SA 3.0/4.0 | Neelachakra © Aditya Mahar | Pattachitra © Biswarup Ganguly
+    </p>
+  </section>
+
+  <!-- PATTACHITRA CULTURAL BANNER -->
+  <section id="pattachitra-banner">
+    <div class="pattachitra-img-wrap">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Puri_jagannath_temple_from_front.jpg/1280px-Puri_jagannath_temple_from_front.jpg"
+        alt="Jagannath Temple Puri backdrop" loading="lazy">
+      <div class="pattachitra-overlay">
+        <div class="pattachitra-text">
+          <span class="section-tag">✦ Our Cultural Heritage</span>
+          <h2>Built Upon the Blessings of <span>Shree Jagannath</span></h2>
+          <p>"Lord Jagannath — whose temple rises 65 metres above Puri — is the eternal guardian of Odisha. Mahaveer
+            Palace is inspired by this timeless grandeur and the sacred Kalinga architectural tradition."</p>
+          <div class="pattachitra-fact-row">
+            <div class="pattachitra-fact"><strong>12th C</strong><span>Temple Built</span></div>
+            <div class="pattachitra-fact"><strong>65m</strong><span>Temple Height</span></div>
+            <div class="pattachitra-fact"><strong>56</strong><span>Bhog Varieties</span></div>
+            <div class="pattachitra-fact"><strong>4</strong><span>Char Dham</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-grid">
+      <div class="about-photo-mosaic fade-in">
+        <div class="mosaic-img">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Neelachakra_of_Jagannath_temple_Puri.JPG/480px-Neelachakra_of_Jagannath_temple_Puri.JPG"
+            alt="Nila Chakra Puri" loading="lazy">
+          <div class="mosaic-gold-label"><span>Nila Chakra — Sacred Wheel, Puri</span></div>
+        </div>
+        <div class="mosaic-img">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Pattachitra_from_Odisha_in_Subhas_Chandra_Bose%27s_parental_home%2C_Cuttack%2C_Odisha%2C_India.jpg/480px-Pattachitra_from_Odisha_in_Subhas_Chandra_Bose%27s_parental_home%2C_Cuttack%2C_Odisha%2C_India.jpg"
+            alt="Pattachitra Cuttack" loading="lazy">
+          <div class="mosaic-gold-label"><span>Pattachitra Art — Cuttack</span></div>
+        </div>
+        <div class="mosaic-img">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Puri_jagannath_temple_from_front.jpg/480px-Puri_jagannath_temple_from_front.jpg"
+            alt="Jagannath Temple Puri" loading="lazy">
+          <div class="mosaic-gold-label"><span>Shree Jagannath Dham</span></div>
+        </div>
+        <div class="about-badge-float"><strong>2025</strong><span>Launch Year</span></div>
+      </div>
+      <div class="about-text fade-in">
+        <span class="section-tag">✦ Our Vision</span>
+        <h2 class="section-title">A Legacy Built in <em>Stone & Spirit</em></h2>
+        <div class="divider"><span class="divider-icon">✦</span></div>
+        <p
+          style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--text-light);line-height:1.8;margin-bottom:1.2rem;font-style:italic;">
+          "Mahaveer Palace is more than a home — it is a sanctuary inspired by the grandeur of Odisha's royal heritage,
+          crafted for those who demand serenity and sophistication."
+        </p>
+        <p style="font-size:.9rem;color:var(--text-light);line-height:1.75;margin-bottom:1.5rem;">
+          Developed by <strong style="color:var(--royal-brown)">Nandan Omacs Properties</strong>, Mahaveer Palace is an
+          upcoming premium residential project designed for comfort, luxury, and seamless connectivity. Located in the
+          sacred cultural heartland of Odisha — home of the revered Shree Jagannath Dham and the ancient Pattachitra
+          tradition — every corner of this project reflects this eternal heritage.
+        </p>
+        <div class="about-features">
+          <div class="about-feat">
+            <div class="about-feat-icon"><i class="fas fa-shield-halved"></i></div>
+            <div>
+              <h4>RERA Approved</h4>
+              <p>Fully compliant & transparent</p>
+            </div>
+          </div>
+          <div class="about-feat">
+            <div class="about-feat-icon"><i class="fas fa-leaf"></i></div>
+            <div>
+              <h4>Eco-Friendly</h4>
+              <p>Green spaces & sustainable design</p>
+            </div>
+          </div>
+          <div class="about-feat">
+            <div class="about-feat-icon"><i class="fas fa-star"></i></div>
+            <div>
+              <h4>Premium Quality</h4>
+              <p>International grade finishes</p>
+            </div>
+          </div>
+          <div class="about-feat">
+            <div class="about-feat-icon"><i class="fas fa-om"></i></div>
+            <div>
+              <h4>Cultural Soul</h4>
+              <p>Inspired by Kalinga architecture</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLATS -->
+  <section id="flats">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">✦ Residential Configuration</span>
+        <h2 class="section-title">Choose Your <em>Dream Home</em></h2>
+        <div class="divider"><span class="divider-icon">✦</span></div>
+        <p class="section-sub">From smart compact living to luxurious penthouses — find the space that resonates with
+          your soul.</p>
+      </div>
+      <div class="flats-grid">
+        <div class="flat-card fade-in">
+          <div class="flat-card-header">
+            <div class="flat-badge">Compact</div>
+            <div class="flat-icon">🏠</div>
+            <div class="flat-name">1 BHK</div>
+            <div class="flat-tagline">Smart Compact Living</div>
+          </div>
+          <div class="flat-card-body">
+            <div class="flat-specs">
+              <div class="flat-spec"><span class="flat-spec-val">550–650</span><span class="flat-spec-label">Sq.
+                  Ft.</span></div>
+              <div class="flat-spec"><span class="flat-spec-val">₹28L+</span><span
+                  class="flat-spec-label">Starting</span></div>
+            </div>
+            <ul class="flat-features">
+              <li><i class="fas fa-check"></i>Modular Kitchen with Chimney</li>
+              <li><i class="fas fa-check"></i>Vitrified Tile Flooring</li>
+              <li><i class="fas fa-check"></i>Attached Bathroom</li>
+              <li><i class="fas fa-check"></i>Balcony with City View</li>
+              <li><i class="fas fa-check"></i>24×7 Security & CCTV</li>
+            </ul>
+            <a href="#enquiry" class="btn-enquire">Enquire Now <i class="fas fa-arrow-right"
+                style="margin-left:.4rem;font-size:.75rem"></i></a>
+          </div>
+        </div>
+        <div class="flat-card fade-in">
+          <div class="flat-card-header">
+            <div class="flat-badge" style="background:var(--deep-gold)">Popular</div>
+            <div class="flat-icon">🏡</div>
+            <div class="flat-name">2 BHK</div>
+            <div class="flat-tagline">Family Comfort Homes</div>
+          </div>
+          <div class="flat-card-body">
+            <div class="flat-specs">
+              <div class="flat-spec"><span class="flat-spec-val">850–1050</span><span class="flat-spec-label">Sq.
+                  Ft.</span></div>
+              <div class="flat-spec"><span class="flat-spec-val">₹45L+</span><span
+                  class="flat-spec-label">Starting</span></div>
+            </div>
+            <ul class="flat-features">
+              <li><i class="fas fa-check"></i>2 Spacious Bedrooms</li>
+              <li><i class="fas fa-check"></i>Premium Modular Kitchen</li>
+              <li><i class="fas fa-check"></i>2 Attached Bathrooms</li>
+              <li><i class="fas fa-check"></i>Master Bedroom Wardrobe</li>
+              <li><i class="fas fa-check"></i>Large Drawing & Dining</li>
+            </ul>
+            <a href="#enquiry" class="btn-enquire">Enquire Now <i class="fas fa-arrow-right"
+                style="margin-left:.4rem;font-size:.75rem"></i></a>
+          </div>
+        </div>
+        <div class="flat-card fade-in">
+          <div class="flat-card-header">
+            <div class="flat-badge" style="background:var(--royal-brown)">Premium</div>
+            <div class="flat-icon">🏢</div>
+            <div class="flat-name">3 BHK</div>
+            <div class="flat-tagline">Premium Spacious Flats</div>
+          </div>
+          <div class="flat-card-body">
+            <div class="flat-specs">
+              <div class="flat-spec"><span class="flat-spec-val">1300–1600</span><span class="flat-spec-label">Sq.
+                  Ft.</span></div>
+              <div class="flat-spec"><span class="flat-spec-val">₹72L+</span><span
+                  class="flat-spec-label">Starting</span></div>
+            </div>
+            <ul class="flat-features">
+              <li><i class="fas fa-check"></i>3 Luxury Bedrooms</li>
+              <li><i class="fas fa-check"></i>Italian Marble Flooring</li>
+              <li><i class="fas fa-check"></i>Designer Bathrooms</li>
+              <li><i class="fas fa-check"></i>Dedicated Servant Room</li>
+              <li><i class="fas fa-check"></i>Wide Private Balcony</li>
+            </ul>
+            <a href="#enquiry" class="btn-enquire">Enquire Now <i class="fas fa-arrow-right"
+                style="margin-left:.4rem;font-size:.75rem"></i></a>
+          </div>
+        </div>
+        <div class="flat-card fade-in">
+          <div class="flat-card-header">
+            <div class="flat-badge" style="background:linear-gradient(135deg,var(--deep-gold),var(--royal-brown))">
+              Luxury</div>
+            <div class="flat-icon">👑</div>
+            <div class="flat-name">Penthouse</div>
+            <div class="flat-tagline">Terrace Flats – Luxury Living</div>
+          </div>
+          <div class="flat-card-body">
+            <div class="flat-specs">
+              <div class="flat-spec"><span class="flat-spec-val">2200+</span><span class="flat-spec-label">Sq.
+                  Ft.</span></div>
+              <div class="flat-spec"><span class="flat-spec-val">₹1.4Cr+</span><span
+                  class="flat-spec-label">Starting</span></div>
+            </div>
+            <ul class="flat-features">
+              <li><i class="fas fa-check"></i>Private Terrace Garden</li>
+              <li><i class="fas fa-check"></i>Panoramic City Views</li>
+              <li><i class="fas fa-check"></i>Private Plunge Pool Option</li>
+              <li><i class="fas fa-check"></i>Smart Home Automation</li>
+              <li><i class="fas fa-check"></i>Double-Height Living Room</li>
+            </ul>
+            <a href="#enquiry" class="btn-enquire">Enquire Now <i class="fas fa-arrow-right"
+                style="margin-left:.4rem;font-size:.75rem"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEMPLE PHOTO GALLERY STRIP -->
+  <section id="temple-strip">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag" style="color:var(--light-gold)">✦ The Land We Call Home</span>
+        <h2 class="section-title" style="color:var(--white)">Pride of <em style="color:var(--light-gold)">Odisha</em>
+        </h2>
+        <div class="divider"><span class="divider-icon" style="color:var(--light-gold)">✦</span></div>
+        <p class="section-sub" style="color:rgba(255,253,248,.55);margin:0 auto;">Odisha — the land of Kalinga, Konark,
+          Pattachitra, and the eternal Lord Jagannath. Mahaveer Palace stands proud in this sacred heritage.</p>
+      </div>
+      <div class="temple-photos">
+        <div class="temple-photo fade-in">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Puri_jagannath_temple_from_front.jpg/480px-Puri_jagannath_temple_from_front.jpg"
+            alt="Jagannath Temple Puri" loading="lazy">
+          <div class="temple-photo-border"></div>
+          <div class="temple-photo-caption"><span>Shree Jagannath Temple, Puri</span></div>
+        </div>
+        <div class="temple-photo fade-in">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Neelachakra_of_Jagannath_temple_Puri.JPG/480px-Neelachakra_of_Jagannath_temple_Puri.JPG"
+            alt="Neelachakra Puri" loading="lazy">
+          <div class="temple-photo-border"></div>
+          <div class="temple-photo-caption"><span>Nila Chakra — Sacred Wheel</span></div>
+        </div>
+        <div class="temple-photo fade-in">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Pattachitra_from_Odisha_in_Subhas_Chandra_Bose%27s_parental_home%2C_Cuttack%2C_Odisha%2C_India.jpg/480px-Pattachitra_from_Odisha_in_Subhas_Chandra_Bose%27s_parental_home%2C_Cuttack%2C_Odisha%2C_India.jpg"
+            alt="Pattachitra art Odisha" loading="lazy">
+          <div class="temple-photo-border"></div>
+          <div class="temple-photo-caption"><span>Pattachitra — Classical Art of Odisha</span></div>
+        </div>
+        <div class="temple-photo fade-in">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Jagannath_Theme_in_Pattachitra-2.jpg/480px-Jagannath_Theme_in_Pattachitra-2.jpg"
+            alt="Lord Jagannath Pattachitra" loading="lazy">
+          <div class="temple-photo-border"></div>
+          <div class="temple-photo-caption"><span>Lord Jagannath in Pattachitra</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AMENITIES -->
+  <section id="amenities">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">✦ World-Class Facilities</span>
+        <h2 class="section-title" style="color:var(--white)">Amenities That <em style="color:var(--light-gold)">Elevate
+            Life</em></h2>
+        <div class="divider"><span class="divider-icon" style="color:var(--light-gold)">✦</span></div>
+        <p class="section-sub" style="color:rgba(255,253,248,.6);margin:0 auto;">Every facility thoughtfully designed
+          for comfort, leisure, and wellbeing.</p>
+      </div>
+      <div class="amenities-grid">
+        <div class="amenity-card fade-in"><span class="amenity-emoji">🌿</span>
+          <div class="amenity-name">Rooftop Terrace Garden</div>
+          <div class="amenity-desc">Lush green oasis above the city</div>
+        </div>
+        <div class="amenity-card fade-in"><span class="amenity-emoji">🏋️</span>
+          <div class="amenity-name">Gym & Fitness Center</div>
+          <div class="amenity-desc">Modern equipment & wellness zone</div>
+        </div>
+        <div class="amenity-card fade-in"><span class="amenity-emoji">🎠</span>
+          <div class="amenity-name">Children Play Area</div>
+          <div class="amenity-desc">Safe, vibrant & creative playground</div>
+        </div>
+        <div class="amenity-card fade-in"><span class="amenity-emoji">🛡️</span>
+          <div class="amenity-name">24×7 Security</div>
+          <div class="amenity-desc">CCTV, intercom & trained guards</div>
+        </div>
+        <div class="amenity-card fade-in"><span class="amenity-emoji">🚗</span>
+          <div class="amenity-name">Parking Facility</div>
+          <div class="amenity-desc">Ample covered & open parking</div>
+        </div>
+        <div class="amenity-card fade-in"><span class="amenity-emoji">⚡</span>
+          <div class="amenity-name">Lift & Power Backup</div>
+          <div class="amenity-desc">High-speed lifts, 100% DG backup</div>
+        </div>
+        <div class="amenity-card fade-in"><span class="amenity-emoji">🎪</span>
+          <div class="amenity-name">Community Hall</div>
+          <div class="amenity-desc">Venue for celebrations & events</div>
+        </div>
+        <div class="amenity-card fade-in"><span class="amenity-emoji">🕉️</span>
+          <div class="amenity-name">Temple & Meditation Zone</div>
+          <div class="amenity-desc">Sacred space for peace & prayer</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section id="location">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">✦ Strategic Location</span>
+        <h2 class="section-title">Everything You Need, <em>Close By</em></h2>
+        <div class="divider"><span class="divider-icon">✦</span></div>
+      </div>
+      <div class="location-grid">
+        <div class="fade-in">
+          <h3
+            style="font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--royal-brown);margin-bottom:1.5rem;">
+            Location Advantages</h3>
+          <ul class="advantage-list">
+            <li class="advantage-item">
+              <div class="advantage-icon"><i class="fas fa-graduation-cap"></i></div>
+              <div>
+                <h4>Schools & Colleges</h4>
+                <p>Top institutions within 2–5 km</p>
+              </div>
+            </li>
+            <li class="advantage-item">
+              <div class="advantage-icon"><i class="fas fa-hospital"></i></div>
+              <div>
+                <h4>Hospitals & Healthcare</h4>
+                <p>Leading hospitals close by</p>
+              </div>
+            </li>
+            <li class="advantage-item">
+              <div class="advantage-icon"><i class="fas fa-shopping-cart"></i></div>
+              <div>
+                <h4>Markets & Malls</h4>
+                <p>Daily essentials & retail hubs nearby</p>
+              </div>
+            </li>
+            <li class="advantage-item">
+              <div class="advantage-icon"><i class="fas fa-train"></i></div>
+              <div>
+                <h4>Railway Station</h4>
+                <p>Convenient rail connectivity</p>
+              </div>
+            </li>
+            <li class="advantage-item">
+              <div class="advantage-icon"><i class="fas fa-bus"></i></div>
+              <div>
+                <h4>Bus Stand</h4>
+                <p>Major bus terminus easily reachable</p>
+              </div>
+            </li>
+            <li class="advantage-item">
+              <div class="advantage-icon"><i class="fas fa-plane"></i></div>
+              <div>
+                <h4>Airport</h4>
+                <p>Bhubaneswar Airport ~45 mins drive</p>
+              </div>
+            </li>
+            <li class="advantage-item">
+              <div class="advantage-icon"><i class="fas fa-om"></i></div>
+              <div>
+                <h4>Jagannath Dham</h4>
+                <p>Puri Sri Mandir ~90 mins drive</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="fade-in">
+          <div class="map-container">
+            <div class="map-label">📍 Mahaveer Palace – Puri, Odisha</div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59872.97534487989!2d85.79065395!3d19.8133822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a19a50398ad41f3%3A0xc5549ca42d3ab8e5!2sPuri%2C%20Odisha!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+              allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              title="Mahaveer Palace Location"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRANSPORT -->
+  <section id="transport">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">✦ Connectivity</span>
+        <h2 class="section-title">Well <em>Connected</em> to the City</h2>
+        <div class="divider"><span class="divider-icon">✦</span></div>
+      </div>
+      <div class="transport-grid">
+        <div class="transport-card fade-in">
+          <div class="transport-icon">🛣️</div>
+          <h3>Highway Access</h3>
+          <p>Direct proximity to NH-16 & major state highways ensuring smooth intercity travel.</p>
+        </div>
+        <div class="transport-card fade-in">
+          <div class="transport-icon">🚌</div>
+          <h3>Public Transport</h3>
+          <p>Regular city buses, shared autos and e-rickshaws available at your doorstep.</p>
+        </div>
+        <div class="transport-card fade-in">
+          <div class="transport-icon">🚕</div>
+          <h3>Cab & Auto</h3>
+          <p>Ola, Uber and local auto services readily available for excellent last-mile connectivity.</p>
+        </div>
+        <div class="transport-card fade-in">
+          <div class="transport-icon">🚇</div>
+          <h3>Future Metro</h3>
+          <p>Upcoming metro rail in Bhubaneswar-Cuttack corridor set to boost connectivity further.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">✦ Visual Journey</span>
+        <h2 class="section-title" style="color:var(--white)">A Glimpse of Your <em
+            style="color:var(--light-gold)">Future Home</em></h2>
+        <div class="divider"><span class="divider-icon" style="color:var(--light-gold)">✦</span></div>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item fade-in">
+          <div class="gallery-item-inner"><span class="gallery-emoji">🏗️</span><span class="gallery-label">Construction
+              Progress – Foundation & Superstructure</span></div>
+          <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        </div>
+        <div class="gallery-item fade-in">
+          <div class="gallery-item-inner"><span class="gallery-emoji">🛋️</span><span class="gallery-label">Living Room
+              Sample Interior</span></div>
+          <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        </div>
+        <div class="gallery-item fade-in">
+          <div class="gallery-item-inner"><span class="gallery-emoji">🍳</span><span class="gallery-label">Premium
+              Modular Kitchen</span></div>
+          <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        </div>
+        <div class="gallery-item fade-in">
+          <div class="gallery-item-inner"><span class="gallery-emoji">🌇</span><span class="gallery-label">Rooftop
+              Terrace View & Garden</span></div>
+          <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        </div>
+        <div class="gallery-item fade-in">
+          <div class="gallery-item-inner"><span class="gallery-emoji">🏊</span><span class="gallery-label">Amenity
+              Zone</span></div>
+          <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        </div>
+        <div class="gallery-item fade-in">
+          <div class="gallery-item-inner"><span class="gallery-emoji">🛏️</span><span class="gallery-label">Master
+              Bedroom Design</span></div>
+          <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENQUIRY -->
+  <section id="enquiry">
+    <div class="container">
+      <div class="enquiry-wrap">
+        <div class="fade-in">
+          <span class="section-tag">✦ Get in Touch</span>
+          <h2 class="section-title">Request Your <em>Free Brochure</em></h2>
+          <div class="divider" style="justify-content:flex-start;"><span class="divider-icon">✦</span></div>
+          <div class="enquiry-info">
+            <p>Take the first step toward your dream home. Our property advisor will reach out with the complete
+              brochure, pricing details, and a personalised walkthrough.</p>
+            <ul class="enquiry-bullet">
+              <li><i class="fas fa-check-circle"></i>Detailed floor plans & layouts</li>
+              <li><i class="fas fa-check-circle"></i>Transparent pricing & payment plans</li>
+              <li><i class="fas fa-check-circle"></i>RERA details & legal documents</li>
+              <li><i class="fas fa-check-circle"></i>Site visit assistance on request</li>
+              <li><i class="fas fa-check-circle"></i>Home loan assistance available</li>
+            </ul>
+          </div>
+          <div
+            style="margin-top:2rem;padding:1.2rem;background:linear-gradient(135deg,var(--pale-gold),var(--parchment));border-left:3px solid var(--deep-gold);">
+            <p
+              style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.95rem;color:var(--royal-brown);line-height:1.6;">
+              🕉 <strong>ଜୟ ଜଗନ୍ନାଥ</strong> — May the blessings of Lord Jagannath guide you to your perfect home at
+              Mahaveer Palace.
+            </p>
+          </div>
+        </div>
+        <div class="enquiry-form fade-in">
+          <h3
+            style="font-family:'Playfair Display',serif;color:var(--royal-brown);font-size:1.2rem;margin-bottom:1.5rem;">
+            Get Brochure & Pricing Details</h3>
+          <form id="brochureForm" onsubmit="handleSubmit(event)">
+            <div class="form-row">
+              <div class="form-group"><label>Full Name *</label><input type="text" name="name"
+                  placeholder="Your full name" required></div>
+              <div class="form-group"><label>Phone Number *</label><input type="tel" name="phone"
+                  placeholder="+91 XXXXX XXXXX" required></div>
+            </div>
+            <div class="form-group"><label>Email Address</label><input type="email" name="email"
+                placeholder="your@email.com"></div>
+            <div class="form-group"><label>Flat Type Interested *</label>
+              <select name="flatType" required>
+                <option value="">Select flat type...</option>
+                <option>1 BHK – Smart Compact Living</option>
+                <option>2 BHK – Family Comfort Homes</option>
+                <option>3 BHK – Premium Spacious Flats</option>
+                <option>Penthouse / Terrace Flat</option>
+                <option>Not decided yet</option>
+              </select>
+            </div>
+            <div class="form-group"><label>Message / Query</label><textarea name="message"
+                placeholder="Any specific requirements or questions..."></textarea></div>
+            <button type="submit" id="brochureBtn" class="btn-brochure"><i class="fas fa-paper-plane"
+                style="margin-right:.6rem"></i>Get Brochure Now</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">✦ Reach Us</span>
+        <h2 class="section-title">We're Here to <em>Help You</em></h2>
+        <div class="divider"><span class="divider-icon">✦</span></div>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card fade-in">
+          <div class="contact-card-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <h3>Office Address</h3>
+          <p>Nandan Omacs Properties<br>Cuttack, Odisha – 753001<br>India</p>
+        </div>
+        <div class="contact-card fade-in">
+          <div class="contact-card-icon"><i class="fas fa-phone-alt"></i></div>
+          <h3>Phone Numbers</h3><a href="tel:+919XXXXXXXXX">+91 9XXXXXXXXX</a><a href="tel:+916XXXXXXXXX">+91
+            6XXXXXXXXX</a>
+          <p style="margin-top:.5rem;font-size:.75rem;">Mon – Sat: 9:00 AM – 7:00 PM</p>
+        </div>
+        <div class="contact-card fade-in">
+          <div class="contact-card-icon"><i class="fab fa-whatsapp"></i></div>
+          <h3>WhatsApp</h3>
+          <p>Chat with us instantly for quick enquiries and brochure requests.</p><a
+            href="https://wa.me/919XXXXXXXXX?text=Hi%2C%20I'm%20interested%20in%20Mahaveer%20Palace"
+            class="whatsapp-btn"><i class="fab fa-whatsapp"></i>Chat on WhatsApp</a>
+        </div>
+        <div class="contact-card fade-in">
+          <div class="contact-card-icon"><i class="fas fa-share-nodes"></i></div>
+          <h3>Follow Us</h3>
+          <p>Stay updated with construction progress & offers.</p>
+          <div class="social-icons"><a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a><a href="#"
+              class="social-icon"><i class="fab fa-instagram"></i></a><a href="#" class="social-icon"><i
+                class="fab fa-youtube"></i></a><a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-stripe"></div>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div style="margin-bottom:1rem;">
+          <img src="images/logo.png" alt="Nandan Omacs Properties" style="height:60px;width:auto;object-fit:contain;" loading="lazy">
+        </div>
+        <p>A premium residential project rooted in the royal heritage of Odisha — inspired by the eternal Lord Jagannath
+          and the Kalinga tradition — crafted for luxury, serenity, and modern living.</p>
+        <div class="social-icons" style="justify-content:flex-start;margin-top:1rem;">
+          <a href="#" class="social-icon"
+            style="background:rgba(255,255,255,.06);border-color:rgba(201,146,42,.2);color:var(--pale-gold)"><i
+              class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon"
+            style="background:rgba(255,255,255,.06);border-color:rgba(201,146,42,.2);color:var(--pale-gold)"><i
+              class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon"
+            style="background:rgba(255,255,255,.06);border-color:rgba(201,146,42,.2);color:var(--pale-gold)"><i
+              class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About Project</a></li>
+          <li><a href="#flats">Types of Flats</a></li>
+          <li><a href="#amenities">Amenities</a></li>
+          <li><a href="#location">Location</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#enquiry">Get Brochure</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Flat Types</h4>
+        <ul class="footer-links">
+          <li><a href="#flats">1 BHK – Smart Living</a></li>
+          <li><a href="#flats">2 BHK – Family Homes</a></li>
+          <li><a href="#flats">3 BHK – Premium Flats</a></li>
+          <li><a href="#flats">Penthouse / Terrace</a></li>
+        </ul>
+        <h4 style="margin-top:1.5rem;">Contact</h4>
+        <ul class="footer-links">
+          <li><a href="tel:+919XXXXXXXXX">+91 9XXXXXXXXX</a></li>
+          <li><a href="mailto:info@nandanomacs.com">info@nandanomacs.com</a></li>
+          <li><a href="#">Cuttack, Odisha</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom" style="max-width:1200px;margin:2rem auto 0">
+      <p>© 2025 Nandan Omacs Properties. All Rights Reserved. | Mahaveer Palace</p>
+      <p style="color:rgba(255,253,248,.22)">🕉 ଜୟ ଜଗନ୍ନାଥ · Designed with ❤ in Odisha</p>
+    </div>
+    <div class="footer-disclaimer" style="max-width:1200px;margin:1.5rem auto 0">
+      <strong style="color:rgba(255,253,248,.42);">Disclaimer:</strong> All images, renderings, and visuals are for
+      representation purposes only. Temple images sourced from Wikimedia Commons under Creative Commons licenses (CC
+      BY-SA 3.0/4.0). Nandan Omacs Properties is not affiliated with the Shree Jagannath Temple Administration, Puri.
+      Actual specifications, amenities, and prices may vary. RERA registration details will be available upon project
+      launch.
+    </div>
+  </footer>
+
+  <!-- SUCCESS MODAL -->
+  <div id="successModal"
+    style="display:none;position:fixed;inset:0;background:rgba(44,26,14,.75);z-index:9999;align-items:center;justify-content:center;">
+    <div
+      style="background:var(--white);max-width:420px;width:90%;padding:3rem;text-align:center;position:relative;border-top:4px solid var(--deep-gold);">
+      <button onclick="document.getElementById('successModal').style.display='none'"
+        style="position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text-light)">✕</button>
+      <img src="images/logo.png" alt="Nandan Omacs Properties"
+        style="height:60px;width:auto;object-fit:contain;margin:0 auto 1rem;display:block;">
+      <h3 style="font-family:'Playfair Display',serif;color:var(--royal-brown);font-size:1.4rem;margin-bottom:.5rem">ଜୟ
+        ଜଗନ୍ନାଥ 🙏</h3>
+      <p style="color:var(--text-light);font-size:.9rem;line-height:1.6">Your enquiry has been received. Your brochure is downloading now!</p>
+      <a href="Mahaveer.pdf" download="Mahaveer-Palace-Brochure.pdf"
+        style="display:inline-block;margin-top:1.2rem;padding:.7rem 2rem;background:linear-gradient(135deg,var(--deep-gold),var(--light-gold));color:var(--royal-brown);font-family:'Lato',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:all .3s;box-shadow:0 4px 16px rgba(201,146,42,.3);">
+        <i class="fas fa-file-download" style="margin-right:.5rem"></i>Download Brochure
+      </a>
+      <div
+        style="margin-top:1.2rem;padding-top:1rem;border-top:1px solid var(--parchment);font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--deep-gold);font-size:.95rem">
+        Welcome to the Mahaveer Palace family ✦</div>
     </div>
   </div>
-  <div class="footer-bottom" style="max-width:1200px;margin:2rem auto 0">
-    <p>© 2025 Nandan Omacs Properties. All Rights Reserved. | Mahaveer Palace</p>
-    <p style="color:rgba(255,253,248,.22)">🕉 ଜୟ ଜଗନ୍ନାଥ · Designed with ❤ in Odisha</p>
-  </div>
-  <div class="footer-disclaimer" style="max-width:1200px;margin:1.5rem auto 0">
-    <strong style="color:rgba(255,253,248,.42);">Disclaimer:</strong> All images, renderings, and visuals are for representation purposes only. Temple images sourced from Wikimedia Commons under Creative Commons licenses (CC BY-SA 3.0/4.0). Nandan Omacs Properties is not affiliated with the Shree Jagannath Temple Administration, Puri. Actual specifications, amenities, and prices may vary. RERA registration details will be available upon project launch.
-  </div>
-</footer>
 
-<!-- SUCCESS MODAL -->
-<div id="successModal" style="display:none;position:fixed;inset:0;background:rgba(44,26,14,.75);z-index:9999;align-items:center;justify-content:center;">
-  <div style="background:var(--white);max-width:420px;width:90%;padding:3rem;text-align:center;position:relative;border-top:4px solid var(--deep-gold);">
-    <button onclick="document.getElementById('successModal').style.display='none'" style="position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text-light)">✕</button>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Neelachakra_of_Jagannath_temple_Puri.JPG/80px-Neelachakra_of_Jagannath_temple_Puri.JPG" alt="Nila Chakra" style="width:52px;height:52px;object-fit:cover;border-radius:50%;margin:0 auto 1rem;display:block;border:2px solid var(--deep-gold);">
-    <h3 style="font-family:'Playfair Display',serif;color:var(--royal-brown);font-size:1.4rem;margin-bottom:.5rem">ଜୟ ଜଗନ୍ନାଥ 🙏</h3>
-    <p style="color:var(--text-light);font-size:.9rem;line-height:1.6">Your enquiry has been received. Our property advisor will contact you shortly with the brochure and pricing details.</p>
-    <div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--parchment);font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--deep-gold);font-size:.95rem">Welcome to the Mahaveer Palace family ✦</div>
-  </div>
-</div>
+  <script>
+    window.addEventListener('scroll', () => document.getElementById('navbar').classList.toggle('scrolled', scrollY > 60));
+    document.getElementById('menuBtn').addEventListener('click', () => document.getElementById('mobileMenu').classList.add('open'));
+    document.getElementById('menuClose').addEventListener('click', closeMobileMenu);
+    function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open') }
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const idx = Array.from(e.target.parentNode.children).indexOf(e.target);
+          setTimeout(() => e.target.classList.add('visible'), idx * 90);
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: .1 });
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+    // ✅ GOOGLE SHEETS INTEGRATION
+    // Replace YOUR_GOOGLE_SCRIPT_URL below with your deployed Apps Script URL
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx8uAg55BZpZ6V8EfaD3b3l9TnhIwa4rO1cowuaUNf29jZ6q7HXthTAYHOEjmCMxbp99g/exec';
 
-<script>
-window.addEventListener('scroll',()=>document.getElementById('navbar').classList.toggle('scrolled',scrollY>60));
-document.getElementById('menuBtn').addEventListener('click',()=>document.getElementById('mobileMenu').classList.add('open'));
-document.getElementById('menuClose').addEventListener('click',closeMobileMenu);
-function closeMobileMenu(){document.getElementById('mobileMenu').classList.remove('open')}
-const obs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      const idx=Array.from(e.target.parentNode.children).indexOf(e.target);
-      setTimeout(()=>e.target.classList.add('visible'),idx*90);
-      obs.unobserve(e.target);
+    function handleSubmit(e) {
+      e.preventDefault();
+      const form = document.getElementById('brochureForm');
+      const btn = document.getElementById('brochureBtn');
+      const origText = btn.innerHTML;
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right:.6rem"></i>Sending...';
+      btn.disabled = true;
+
+      const data = {
+        name: form.name.value,
+        phone: form.phone.value,
+        email: form.email.value,
+        flatType: form.flatType.value,
+        message: form.message.value
+      };
+
+      fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      })
+        .then(() => {
+          document.getElementById('successModal').style.display = 'flex';
+          // Auto-download brochure PDF
+          const link = document.createElement('a');
+          link.href = 'Mahaveer.pdf';
+          link.download = 'Mahaveer-Palace-Brochure.pdf';
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+          form.reset();
+        })
+        .catch(err => {
+          console.error('Submission error:', err);
+          alert('Something went wrong. Please try again or contact us via WhatsApp.');
+        })
+        .finally(() => {
+          btn.innerHTML = origText;
+          btn.disabled = false;
+        });
     }
-  });
-},{threshold:.1});
-document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
-function handleSubmit(e){e.preventDefault();document.getElementById('successModal').style.display='flex'}
-document.querySelectorAll('img').forEach(img=>{
-  img.onerror=function(){
-    this.style.display='none';
-    const p=this.closest('.mosaic-img,.cultural-img-frame,.temple-photo,.nav-logo-emblem');
-    if(p)p.style.background='linear-gradient(135deg,#EDE0C8,#C9922A33)';
-  }
-});
-</script>
+    document.querySelectorAll('img').forEach(img => {
+      img.onerror = function () {
+        this.style.display = 'none';
+        const p = this.closest('.mosaic-img,.cultural-img-frame,.temple-photo,.nav-logo-emblem');
+        if (p) p.style.background = 'linear-gradient(135deg,#EDE0C8,#C9922A33)';
+      }
+    });
+  </script>
 </body>
+
 </html>
