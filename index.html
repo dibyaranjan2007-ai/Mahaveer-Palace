@@ -697,7 +697,7 @@
 
     .pattachitra-img-wrap {
       position: relative;
-      height: 340px
+      height: 420px
     }
 
     .pattachitra-img-wrap img {
@@ -718,7 +718,7 @@
 
     .pattachitra-text {
       padding: 3rem 4rem;
-      max-width: 620px
+      max-width: 700px
     }
 
     .pattachitra-text .section-tag {
@@ -1337,28 +1337,30 @@
       min-height: 180px
     }
 
-    .gallery-item-inner {
+    .gallery-item img {
       width: 100%;
       height: 100%;
-      background: linear-gradient(135deg, rgba(201, 146, 42, .2), rgba(92, 58, 30, .3));
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: .8rem
+      object-fit: cover;
+      transition: transform .5s;
     }
 
-    .gallery-emoji {
-      font-size: 3rem
+    .gallery-item:hover img {
+      transform: scale(1.08);
     }
 
     .gallery-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(44, 26, 14, 0.95));
+      padding: 1.5rem 1rem 1rem;
       font-family: 'Cormorant Garamond', serif;
-      font-size: .9rem;
+      font-size: 1rem;
       font-style: italic;
       color: var(--pale-gold);
       text-align: center;
-      padding: 0 1rem
+      z-index: 2;
     }
 
     .gallery-overlay {
@@ -1918,14 +1920,16 @@
     <div class="cultural-grid">
       <div class="cultural-card fade-in">
         <div class="cultural-img-frame">
-          <img src="images/jagannath_temple.png" alt="Shree Jagannath Temple Puri front" loading="lazy">
+          <img src="C:\Users\HP\.gemini\antigravity\scratch\Mahaveer-Palace\images\jaganath mandir 3.jpeg"
+            alt="Shree Jagannath Temple Puri front" loading="lazy">
         </div>
         <div class="cultural-card-title">Shree Jagannath Temple, Puri</div>
         <div class="cultural-card-sub">The Sacred Dhama — one of India's Char Dhams</div>
       </div>
       <div class="cultural-card fade-in">
         <div class="cultural-img-frame">
-          <img src="images/nila_chakra.png" alt="Nila Chakra atop Jagannath Temple Puri" loading="lazy">
+          <img src="C:\Users\HP\.gemini\antigravity\scratch\Mahaveer-Palace\images\nila chakra 2.jpeg"
+            alt="Nila Chakra atop Jagannath Temple Puri" loading="lazy">
         </div>
         <div class="cultural-card-title">The Sacred Nila Chakra</div>
         <div class="cultural-card-sub">Eight-spoked wheel of Vishnu — symbol of cosmic order</div>
@@ -1942,7 +1946,6 @@
       Images: Wikimedia Commons — CC BY-SA 3.0/4.0 | Neelachakra © Aditya Mahar | Pattachitra © Biswarup Ganguly
     </p>
   </section>
-
   <!-- PATTACHITRA CULTURAL BANNER -->
   <section id="pattachitra-banner">
     <div class="pattachitra-img-wrap">
@@ -1956,7 +1959,7 @@
           <p>"Lord Jagannath — whose temple rises 65 metres above Puri — is the eternal guardian of Odisha. Mahaveer
             Palace is inspired by this timeless grandeur and the sacred Kalinga architectural tradition."</p>
           <div class="pattachitra-fact-row">
-            <div class="pattachitra-fact"><strong>12th C</strong><span>Temple Built</span></div>
+            <div class="pattachitra-fact"><strong>12th </strong><span>Temple Built</span></div>
             <div class="pattachitra-fact"><strong>65m</strong><span>Temple Height</span></div>
             <div class="pattachitra-fact"><strong>56</strong><span>Bhog Varieties</span></div>
             <div class="pattachitra-fact"><strong>4</strong><span>Char Dham</span></div>
@@ -1965,7 +1968,6 @@
       </div>
     </div>
   </section>
-
 
 
   <!-- FLATS -->
@@ -2013,9 +2015,9 @@
           </div>
           <div class="flat-card-body">
             <div class="flat-specs">
-              <div class="flat-spec"><span class="flat-spec-val">850–1050</span><span class="flat-spec-label">Sq.
+              <div class="flat-spec"><span class="flat-spec-val">711–818</span><span class="flat-spec-label">Sq.
                   Ft.</span></div>
-              <div class="flat-spec"><span class="flat-spec-val">₹45L+</span><span
+              <div class="flat-spec"><span class="flat-spec-val">₹56.8L+</span><span
                   class="flat-spec-label">Starting</span></div>
             </div>
             <ul class="flat-features">
@@ -2038,9 +2040,9 @@
           </div>
           <div class="flat-card-body">
             <div class="flat-specs">
-              <div class="flat-spec"><span class="flat-spec-val">1300–1600</span><span class="flat-spec-label">Sq.
+              <div class="flat-spec"><span class="flat-spec-val">1009–1148</span><span class="flat-spec-label">Sq.
                   Ft.</span></div>
-              <div class="flat-spec"><span class="flat-spec-val">₹72L+</span><span
+              <div class="flat-spec"><span class="flat-spec-val">₹80.7L+</span><span
                   class="flat-spec-label">Starting</span></div>
             </div>
             <ul class="flat-features">
@@ -2072,30 +2074,26 @@
       </div>
       <div class="temple-photos">
         <div class="temple-photo fade-in">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Puri_jagannath_temple_from_front.jpg/480px-Puri_jagannath_temple_from_front.jpg"
+          <img src="C:\Users\HP\.gemini\antigravity\scratch\Mahaveer-Palace\images\jagannath_temple.png"
             alt="Jagannath Temple Puri" loading="lazy">
           <div class="temple-photo-border"></div>
           <div class="temple-photo-caption"><span>Shree Jagannath Temple, Puri</span></div>
         </div>
         <div class="temple-photo fade-in">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Neelachakra_of_Jagannath_temple_Puri.JPG/480px-Neelachakra_of_Jagannath_temple_Puri.JPG"
+          <img src="C:\Users\HP\.gemini\antigravity\scratch\Mahaveer-Palace\images\nila chakra.jpeg"
             alt="Neelachakra Puri" loading="lazy">
           <div class="temple-photo-border"></div>
           <div class="temple-photo-caption"><span>Nila Chakra — Sacred Wheel</span></div>
         </div>
         <div class="temple-photo fade-in">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Pattachitra_from_Odisha_in_Subhas_Chandra_Bose%27s_parental_home%2C_Cuttack%2C_Odisha%2C_India.jpg/480px-Pattachitra_from_Odisha_in_Subhas_Chandra_Bose%27s_parental_home%2C_Cuttack%2C_Odisha%2C_India.jpg"
+          <img src="C:\Users\HP\.gemini\antigravity\scratch\Mahaveer-Palace\images\pattachitra_art.png"
             alt="Pattachitra art Odisha" loading="lazy">
           <div class="temple-photo-border"></div>
           <div class="temple-photo-caption"><span>Pattachitra — Classical Art of Odisha</span></div>
         </div>
         <div class="temple-photo fade-in">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Jagannath_Theme_in_Pattachitra-2.jpg/480px-Jagannath_Theme_in_Pattachitra-2.jpg"
-            alt="Lord Jagannath Pattachitra" loading="lazy">
+          <img src="C:\Users\HP\.gemini\antigravity\scratch\Mahaveer-Palace\images\jaganathpic.jpeg"
+            alt="Lord Jagannath " loading="lazy">
           <div class="temple-photo-border"></div>
           <div class="temple-photo-caption"><span>Lord Jagannath in Pattachitra</span></div>
         </div>
@@ -2273,33 +2271,33 @@
       </div>
       <div class="gallery-grid">
         <div class="gallery-item fade-in">
-          <div class="gallery-item-inner"><span class="gallery-emoji">🏗️</span><span class="gallery-label">Construction
-              Progress – Foundation & Superstructure</span></div>
+          <img src="https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=80&w=800" alt="Construction Progress" loading="lazy">
+          <div class="gallery-label">Construction Progress – Foundation & Superstructure</div>
           <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
         </div>
         <div class="gallery-item fade-in">
-          <div class="gallery-item-inner"><span class="gallery-emoji">🛋️</span><span class="gallery-label">Living Room
-              Sample Interior</span></div>
+          <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=800" alt="Living Room Sample Interior" loading="lazy">
+          <div class="gallery-label">Living Room Sample Interior</div>
           <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
         </div>
         <div class="gallery-item fade-in">
-          <div class="gallery-item-inner"><span class="gallery-emoji">🍳</span><span class="gallery-label">Premium
-              Modular Kitchen</span></div>
+          <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=800" alt="Premium Modular Kitchen" loading="lazy">
+          <div class="gallery-label">Premium Modular Kitchen</div>
           <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
         </div>
         <div class="gallery-item fade-in">
-          <div class="gallery-item-inner"><span class="gallery-emoji">🌇</span><span class="gallery-label">Rooftop
-              Terrace View & Garden</span></div>
+          <img src="https://images.unsplash.com/photo-1527181152855-fc03fc7949c8?q=80&w=800" alt="Rooftop Terrace View & Garden" loading="lazy">
+          <div class="gallery-label">Rooftop Terrace View & Garden</div>
           <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
         </div>
         <div class="gallery-item fade-in">
-          <div class="gallery-item-inner"><span class="gallery-emoji">🏊</span><span class="gallery-label">Amenity
-              Zone</span></div>
+          <img src="https://images.unsplash.com/photo-1576013551627-c0208226079d?q=80&w=800" alt="Amenity Zone" loading="lazy">
+          <div class="gallery-label">Amenity Zone</div>
           <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
         </div>
         <div class="gallery-item fade-in">
-          <div class="gallery-item-inner"><span class="gallery-emoji">🛏️</span><span class="gallery-label">Master
-              Bedroom Design</span></div>
+          <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=800" alt="Master Bedroom Design" loading="lazy">
+          <div class="gallery-label">Master Bedroom Design</div>
           <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
         </div>
       </div>
