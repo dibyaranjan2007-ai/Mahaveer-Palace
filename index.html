@@ -15,7 +15,7 @@
       --deep-gold: #C9922A;
       --light-gold: #E8B96A;
       --pale-gold: #F5DFA0;
-      --emerald: #1A5C3A;
+      --emerald: #a38123;
       --cream: #F7F0E6;
       --parchment: #EDE0C8;
       --parchment-dark: #D4C4A0;
@@ -395,7 +395,7 @@
     }
 
     .hero-title span {
-      color: #2ECC71
+      color: #c2952b
     }
 
     .hero-sub {
@@ -588,6 +588,52 @@
 
       50% {
         transform: translateX(-50%) translateY(8px)
+      }
+    }
+
+    .maintenance-box {
+      margin-top: 2.5rem;
+      display: inline-block;
+      background: linear-gradient(135deg, rgba(201, 146, 42, 0.15), rgba(44, 26, 14, 0.4));
+      border: 1px solid var(--deep-gold);
+      padding: 0.8rem 2rem;
+      backdrop-filter: blur(8px);
+      color: var(--white);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      box-shadow: 0 0 20px rgba(201, 146, 42, 0.5);
+      animation: pulseGlow 1.5s infinite alternate, fadeUp 1s ease 0.9s both;
+      cursor: default;
+    }
+
+    .maintenance-box .highlight-text {
+      color: var(--light-gold);
+      text-shadow: 0 0 8px rgba(233, 185, 106, 0.6);
+    }
+
+    .maintenance-box .tnc {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      opacity: 0.7;
+      vertical-align: super;
+      margin-left: 6px;
+      color: var(--pale-gold);
+      text-transform: lowercase;
+    }
+
+    @keyframes pulseGlow {
+      from {
+        box-shadow: 0 0 10px rgba(201, 146, 42, 0.2);
+        border-color: rgba(201, 146, 42, 0.4);
+      }
+
+      to {
+        box-shadow: 0 0 25px rgba(201, 146, 42, 0.9);
+        border-color: var(--light-gold);
       }
     }
 
@@ -1906,6 +1952,9 @@
         <a href="#enquiry" class="btn-outline"><i class="fas fa-file-download" style="margin-right:.5rem"></i>Download
           Brochure</a>
       </div>
+      <div class="maintenance-box">
+        <span class="highlight-text">NO</span> MAINTENANCE<span class="tnc">*t&c applied</span>
+      </div>
     </div>
     <div class="hero-scroll"><span>Discover</span><i class="fas fa-chevron-down"></i></div>
     <div class="hero-bottom-border"></div>
@@ -1999,6 +2048,7 @@
               <li><i class="fas fa-check"></i>Attached Bathroom</li>
               <li><i class="fas fa-check"></i>Balcony with City View</li>
               <li><i class="fas fa-check"></i>24×7 Security & CCTV</li>
+              <li><i class="fas fa-check"></i>Motto branded tiles will be provided</li>
             </ul>
             <a href="#enquiry" class="btn-enquire">Enquire Now <i class="fas fa-arrow-right"
                 style="margin-left:.4rem;font-size:.75rem"></i></a>
@@ -2024,6 +2074,7 @@
               <li><i class="fas fa-check"></i>Attached Bathroom</li>
               <li><i class="fas fa-check"></i>Built-in Wardrobe</li>
               <li><i class="fas fa-check"></i>Drawing &amp; Dining Area</li>
+              <li><i class="fas fa-check"></i>Motto branded tiles will be provided</li>
             </ul>
             <a href="#enquiry" class="btn-enquire">Enquire Now <i class="fas fa-arrow-right"
                 style="margin-left:.4rem;font-size:.75rem"></i></a>
@@ -2049,6 +2100,7 @@
               <li><i class="fas fa-check"></i>2 Designer Bathrooms</li>
               <li><i class="fas fa-check"></i>Master Bedroom Wardrobe</li>
               <li><i class="fas fa-check"></i>Wide Private Balcony</li>
+              <li><i class="fas fa-check"></i>Motto branded tiles will be provided</li>
             </ul>
             <a href="#enquiry" class="btn-enquire">Enquire Now <i class="fas fa-arrow-right"
                 style="margin-left:.4rem;font-size:.75rem"></i></a>
