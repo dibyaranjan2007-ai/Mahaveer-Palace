@@ -591,8 +591,14 @@
       }
     }
 
-    .maintenance-box {
+    .maintenance-wrapper {
+      position: relative;
+      display: inline-block;
       margin-top: 2.5rem;
+      animation: fadeUp 1s ease 0.9s both;
+    }
+
+    .maintenance-box {
       display: inline-block;
       background: linear-gradient(135deg, rgba(201, 146, 42, 0.15), rgba(44, 26, 14, 0.4));
       border: 1px solid var(--deep-gold);
@@ -604,8 +610,13 @@
       font-weight: 700;
       letter-spacing: 0.08em;
       box-shadow: 0 0 20px rgba(201, 146, 42, 0.5);
-      animation: pulseGlow 1.5s infinite alternate, fadeUp 1s ease 0.9s both;
-      cursor: default;
+      animation: pulseGlow 1.5s infinite alternate;
+      cursor: pointer;
+      transition: transform .3s;
+    }
+
+    .maintenance-box:hover {
+      transform: scale(1.04);
     }
 
     .maintenance-box .highlight-text {
@@ -623,6 +634,111 @@
       margin-left: 6px;
       color: var(--pale-gold);
       text-transform: lowercase;
+    }
+
+    /* MAINTENANCE POPUP */
+    .maintenance-popup {
+      position: absolute;
+      bottom: calc(100% + 18px);
+      left: 50%;
+      transform: translateX(-50%) translateY(10px);
+      width: 420px;
+      max-height: 80vh;
+      overflow-y: auto;
+      background: linear-gradient(165deg, rgba(44, 26, 14, 0.97), rgba(92, 58, 30, 0.96));
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(201, 146, 42, 0.5);
+      padding: 2rem 1.8rem;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity .35s ease, transform .35s ease, visibility .35s;
+      z-index: 100;
+      box-shadow: 0 20px 60px rgba(0,0,0,.5), 0 0 30px rgba(201, 146, 42, 0.15);
+    }
+
+    .maintenance-popup::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%) rotate(45deg);
+      width: 16px;
+      height: 16px;
+      background: rgba(92, 58, 30, 0.96);
+      border-right: 1px solid rgba(201, 146, 42, 0.5);
+      border-bottom: 1px solid rgba(201, 146, 42, 0.5);
+    }
+
+    .maintenance-wrapper:hover .maintenance-popup {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .maintenance-popup h4 {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1rem;
+      color: var(--light-gold);
+      margin-bottom: .6rem;
+      text-align: center;
+      letter-spacing: .04em;
+    }
+
+    .maintenance-popup .popup-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--deep-gold), transparent);
+      margin: .8rem 0;
+    }
+
+    .maintenance-popup p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: .95rem;
+      color: rgba(245, 223, 160, 0.85);
+      line-height: 1.7;
+      margin-bottom: .7rem;
+    }
+
+    .maintenance-popup .popup-subtitle {
+      font-family: 'Playfair Display', serif;
+      font-size: .88rem;
+      color: var(--pale-gold);
+      font-weight: 600;
+      margin-top: 1rem;
+      margin-bottom: .6rem;
+    }
+
+    .maintenance-popup .popup-benefits {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+    }
+
+    .maintenance-popup .popup-benefits li {
+      font-family: 'Lato', sans-serif;
+      font-size: .8rem;
+      color: rgba(245, 223, 160, 0.75);
+      padding: .4rem 0;
+      border-bottom: 1px solid rgba(201, 146, 42, 0.12);
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+
+    .maintenance-popup .popup-benefits li i {
+      color: var(--deep-gold);
+      font-size: .7rem;
+    }
+
+    .maintenance-popup .popup-footer {
+      font-family: 'Lato', sans-serif;
+      font-size: .68rem;
+      color: rgba(245, 223, 160, 0.4);
+      font-style: italic;
+      text-align: center;
+      margin-top: .8rem;
+      letter-spacing: .05em;
     }
 
     @keyframes pulseGlow {
@@ -1952,8 +2068,25 @@
         <a href="#enquiry" class="btn-outline"><i class="fas fa-file-download" style="margin-right:.5rem"></i>Download
           Brochure</a>
       </div>
-      <div class="maintenance-box">
-        <span class="highlight-text">NO</span> MAINTENANCE<span class="tnc">*t&c applied</span>
+      <div class="maintenance-wrapper">
+        <div class="maintenance-popup">
+          <h4>No Maintenance – Lifetime Benefit</h4>
+          <div class="popup-divider"></div>
+          <p>Pay a one-time amount of <strong style="color:var(--light-gold)">₹2,00,000</strong> and enjoy complete freedom from maintenance charges for a lifetime. This exclusive benefit ensures that you never have to worry about recurring monthly fees.</p>
+          <p>With this offer, residents can experience true peace of mind as the cost covers essential upkeep of common areas and shared facilities. It not only reduces long-term expenses but also adds significant value to your investment.</p>
+          <div class="popup-subtitle">Enjoy hassle-free ownership with:</div>
+          <ul class="popup-benefits">
+            <li><i class="fas fa-check-circle"></i>Zero monthly maintenance charges</li>
+            <li><i class="fas fa-check-circle"></i>Coverage for common area upkeep</li>
+            <li><i class="fas fa-check-circle"></i>Long-term financial savings</li>
+            <li><i class="fas fa-check-circle"></i>No hidden or recurring costs</li>
+          </ul>
+          <p>This is a one-time investment designed to provide convenience, transparency, and lasting value.</p>
+          <div class="popup-footer">Terms & conditions apply. Subject to developer policies.</div>
+        </div>
+        <div class="maintenance-box">
+          <span class="highlight-text">NO</span> MAINTENANCE<span class="tnc">*t&c applied</span>
+        </div>
       </div>
     </div>
     <div class="hero-scroll"><span>Discover</span><i class="fas fa-chevron-down"></i></div>
