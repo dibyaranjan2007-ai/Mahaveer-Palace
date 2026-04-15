@@ -646,6 +646,7 @@
       max-width: 90vw;
       max-height: 80vh;
       overflow-y: auto;
+      scrollbar-width: none; /* Firefox */
       background: linear-gradient(165deg, rgba(44, 26, 14, 0.97), rgba(92, 58, 30, 0.96));
       backdrop-filter: blur(20px);
       border: 1px solid rgba(201, 146, 42, 0.5);
@@ -656,6 +657,10 @@
       transition: opacity .35s ease, transform .35s ease, visibility .35s;
       z-index: 100;
       box-shadow: 0 20px 60px rgba(0, 0, 0, .5), 0 0 30px rgba(201, 146, 42, 0.15);
+    }
+
+    .maintenance-popup::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Edge */
     }
 
     .maintenance-popup::after {
