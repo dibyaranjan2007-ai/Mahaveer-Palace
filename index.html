@@ -1094,7 +1094,9 @@
       border: 1px solid rgba(201, 146, 42, .25);
       transition: all .4s;
       position: relative;
-      overflow: hidden
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
     }
 
     .flat-card::before {
@@ -1153,7 +1155,10 @@
     }
 
     .flat-card-body {
-      padding: 1.5rem 2rem
+      padding: 1.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
     }
 
     .flat-specs {
@@ -1217,7 +1222,8 @@
       transition: all .3s;
       text-decoration: none;
       display: block;
-      text-align: center
+      text-align: center;
+      margin-top: auto;
     }
 
     .btn-enquire:hover {
