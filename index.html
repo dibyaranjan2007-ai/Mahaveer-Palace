@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mahaveer Palace – Where Tradition Meets Modern Living</title>
+  <title>Mahaveer Palace Puri</title>
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Cinzel+Decorative:wght@400;700&family=Lato:wght@300;400;700&display=swap"
     rel="stylesheet">
@@ -646,7 +646,8 @@
       max-width: 90vw;
       max-height: 80vh;
       overflow-y: auto;
-      scrollbar-width: none; /* Firefox */
+      scrollbar-width: none;
+      /* Firefox */
       background: linear-gradient(165deg, rgba(44, 26, 14, 0.97), rgba(92, 58, 30, 0.96));
       backdrop-filter: blur(20px);
       border: 1px solid rgba(201, 146, 42, 0.5);
@@ -660,7 +661,8 @@
     }
 
     .maintenance-popup::-webkit-scrollbar {
-      display: none; /* Chrome, Safari, Edge */
+      display: none;
+      /* Chrome, Safari, Edge */
     }
 
     .maintenance-popup::after {
@@ -2309,7 +2311,7 @@
           <div class="amenity-desc">Lush green oasis above the city</div>
         </div>
         <div class="amenity-card fade-in"><span class="amenity-emoji">🏋️</span>
-          <div class="amenity-name">Gym & Fitness Center</div>
+          <div class="amenity-name">Gym & Yoga</div>
           <div class="amenity-desc">Modern equipment & wellness zone</div>
         </div>
         <div class="amenity-card fade-in"><span class="amenity-emoji">🎠</span>
@@ -2458,8 +2460,7 @@
       </div>
       <div class="gallery-grid">
         <div class="gallery-item fade-in">
-          <img src="images/con-2.jpeg"
-            alt="Construction Progress" loading="lazy">
+          <img src="images/con-2.jpeg" alt="Construction Progress" loading="lazy">
           <div class="gallery-label">Construction Progress – Foundation & Superstructure</div>
           <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
         </div>
@@ -2641,7 +2642,7 @@
     </div>
     <div class="footer-bottom" style="max-width:1200px;margin:2rem auto 0">
       <p>© 2025 Nandan Omacs Properties. All Rights Reserved. | Mahaveer Palace</p>
-      <p style="color:rgba(255,253,248,.22)"> ଜୟ ଜଗନ୍ନାଥ · Designed with ❤ in Odisha</p>
+      <p style="color:rgba(255,253,248,.22)"> ଜୟ ଜଗନ୍ନାଥ · Designed with ❤ DIbya in Odisha</p>
     </div>
     <div class="footer-disclaimer" style="max-width:1200px;margin:1.5rem auto 0">
       <strong style="color:rgba(255,253,248,.42);">Disclaimer:</strong> All images, renderings, and visuals are for
@@ -2675,6 +2676,11 @@
     </div>
   </div>
 
+  <!-- Firebase App (the core Firebase SDK), Realtime Database, and Analytics SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics-compat.js"></script>
+
   <script>
     window.addEventListener('scroll', () => document.getElementById('navbar').classList.toggle('scrolled', scrollY > 60));
     document.getElementById('menuBtn').addEventListener('click', () => document.getElementById('mobileMenu').classList.add('open'));
@@ -2690,9 +2696,23 @@
       });
     }, { threshold: .1 });
     document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
-    // ✅ GOOGLE SHEETS INTEGRATION
-    // Replace YOUR_GOOGLE_SCRIPT_URL below with your deployed Apps Script URL
-    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx8uAg55BZpZ6V8EfaD3b3l9TnhIwa4rO1cowuaUNf29jZ6q7HXthTAYHOEjmCMxbp99g/exec';
+
+    // ✅ FIREBASE CONFIGURATION
+    const firebaseConfig = {
+      apiKey: "AIzaSyCJseEt_Hlp_e8U973dTKwIMuWs6EB7OFc",
+      authDomain: "mahaveer-palace-d0b8c.firebaseapp.com",
+      databaseURL: "https://mahaveer-palace-d0b8c-default-rtdb.firebaseio.com",
+      projectId: "mahaveer-palace-d0b8c",
+      storageBucket: "mahaveer-palace-d0b8c.firebasestorage.app",
+      messagingSenderId: "292108075486",
+      appId: "1:292108075486:web:4d81d8cb0733363195dd4f",
+      measurementId: "G-454TS5L8V7"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.database();
+    const analytics = firebase.analytics();
 
     function handleSubmit(e) {
       e.preventDefault();
@@ -2705,35 +2725,56 @@
       const data = {
         name: form.name.value,
         phone: form.phone.value,
-        email: form.email.value,
+        email: form.email.value || "",
         flatType: form.flatType.value,
-        message: form.message.value,
+        message: form.message.value || "",
         timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
       };
 
-      // URLSearchParams works with no-cors; JSON body gets stripped by the browser
-      const params = new URLSearchParams(data);
+      function showSuccessModal() {
+        document.getElementById('successModal').style.display = 'flex';
+        // Auto-download brochure PDF
+        const link = document.createElement('a');
+        link.href = 'Mahaveer.pdf';
+        link.download = 'Mahaveer-Palace-Brochure.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        form.reset();
+      }
 
-      fetch(GOOGLE_SCRIPT_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: params.toString()
-      })
+      // Check if Firebase has been configured by the developer
+      if (firebaseConfig.projectId === "YOUR_PROJECT_ID" || !firebaseConfig.apiKey || firebaseConfig.apiKey.startsWith("YOUR_")) {
+        console.warn("Firebase is not fully configured yet. Logging lead to console (Local Fallback Mode):", data);
+        setTimeout(() => {
+          showSuccessModal();
+          btn.innerHTML = origText;
+          btn.disabled = false;
+        }, 800); // Simulate network latency
+        return;
+      }
+
+      // Store lead in Firebase Realtime Database 'leads' reference with a 6-second timeout safety guard
+      const dbPromise = db.ref("leads").push({
+        name: data.name,
+        phone: data.phone,
+        email: data.email,
+        flatType: data.flatType,
+        message: data.message,
+        timestamp: firebase.database.ServerValue.TIMESTAMP // Server timestamp for Realtime DB
+      });
+
+      const timeoutPromise = new Promise((_, reject) =>
+        setTimeout(() => reject(new Error("Timeout connecting to Realtime Database")), 6000)
+      );
+
+      Promise.race([dbPromise, timeoutPromise])
         .then(() => {
-          document.getElementById('successModal').style.display = 'flex';
-          // Auto-download brochure PDF
-          const link = document.createElement('a');
-          link.href = 'Mahaveer.pdf';
-          link.download = 'Mahaveer-Palace-Brochure.pdf';
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-          form.reset();
+          showSuccessModal();
         })
         .catch(err => {
-          console.error('Submission error:', err);
-          alert('Something went wrong. Please try again or contact us via WhatsApp.');
+          console.error('Firebase Submission error:', err);
+          alert('Submission failed. Please make sure that:\n1. You have created a "Realtime Database" in your Firebase console.\n2. Your Database Rules allow public writes.\n\n(Error details: ' + err.message + ')');
         })
         .finally(() => {
           btn.innerHTML = origText;
