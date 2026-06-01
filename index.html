@@ -2006,6 +2006,51 @@
         background: rgba(44, 26, 14, .92)
       }
     }
+
+    /* GLASSMORPHIC COMING SOON OVERLAY */
+    .soon-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(44, 26, 14, 0.45);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 5;
+      padding: 1.5rem;
+      border: 1px solid rgba(233, 185, 106, 0.12);
+      animation: fadeInSoon 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    @keyframes fadeInSoon {
+      from { opacity: 0; transform: scale(0.96); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .soon-badge {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--light-gold);
+      border: 1px dashed rgba(233, 185, 106, 0.35);
+      padding: 0.4rem 1.2rem;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 0.6rem;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    .soon-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--pale-gold);
+      text-align: center;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    }
   </style>
 </head>
 
@@ -2784,8 +2829,32 @@
     document.querySelectorAll('img').forEach(img => {
       img.onerror = function () {
         this.style.display = 'none';
+        
+        // Handle general images (logos, temple photos, etc.)
         const p = this.closest('.mosaic-img,.cultural-img-frame,.temple-photo,.nav-logo-emblem');
-        if (p) p.style.background = 'linear-gradient(135deg,#EDE0C8,#C9922A33)';
+        if (p) {
+          p.style.background = 'linear-gradient(135deg,#EDE0C8,#C9922A33)';
+          return;
+        }
+
+        // Handle gallery items specially
+        const galleryItem = this.closest('.gallery-item');
+        if (galleryItem) {
+          // Create the blurred overlay
+          const soonOverlay = document.createElement('div');
+          soonOverlay.className = 'soon-overlay';
+          soonOverlay.innerHTML = `
+            <div class="soon-badge">Coming Soon</div>
+            <div class="soon-text">Will be uploaded soon</div>
+          `;
+          
+          // Disable interactive overlays / expand buttons on hover
+          const overlay = galleryItem.querySelector('.gallery-overlay');
+          if (overlay) overlay.style.display = 'none';
+          
+          // Append the blurred overlay
+          galleryItem.appendChild(soonOverlay);
+        }
       }
     });
   </script>
