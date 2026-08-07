@@ -2623,7 +2623,11 @@
           <h3
             style="font-family:'Playfair Display',serif;color:var(--royal-brown);font-size:1.2rem;margin-bottom:1.5rem;">
             Get Brochure & Pricing Details</h3>
-          <form id="brochureForm" onsubmit="handleSubmit(event)">
+          <form id="brochureForm" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleSubmit(event)">
+            <input type="hidden" name="form-name" value="brochureForm" />
+            <div style="display:none">
+              <label>Don't fill this: <input name="bot-field" /></label>
+            </div>
             <div class="form-row">
               <div class="form-group"><label>Full Name *</label><input type="text" name="name"
                   placeholder="Your full name" required></div>
@@ -2774,9 +2778,10 @@
     </div>
   </div>
 
-  <!-- Firebase App (the core Firebase SDK), Realtime Database, and Analytics SDKs -->
+  <!-- Firebase App (the core Firebase SDK), Realtime Database, Cloud Firestore, and Analytics SDKs -->
   <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics-compat.js"></script>
 
   <script>
@@ -2812,6 +2817,14 @@
     const db = firebase.database();
     const analytics = firebase.analytics();
 
+    // Initialize Firestore database if available
+    let firestoreDb = null;
+    try {
+      firestoreDb = firebase.firestore();
+    } catch (err) {
+      console.warn("Firestore could not be initialized:", err);
+    }
+
     function handleSubmit(e) {
       e.preventDefault();
       const form = document.getElementById('brochureForm');
@@ -2842,37 +2855,83 @@
       }
 
       // Check if Firebase has been configured by the developer
-      if (firebaseConfig.projectId === "YOUR_PROJECT_ID" || !firebaseConfig.apiKey || firebaseConfig.apiKey.startsWith("YOUR_")) {
-        console.warn("Firebase is not fully configured yet. Logging lead to console (Local Fallback Mode):", data);
-        setTimeout(() => {
-          showSuccessModal();
-          btn.innerHTML = origText;
-          btn.disabled = false;
-        }, 800); // Simulate network latency
-        return;
-      }
+      const isFirebaseConfigured = !(firebaseConfig.projectId === "YOUR_PROJECT_ID" || !firebaseConfig.apiKey || firebaseConfig.apiKey.startsWith("YOUR_"));
 
-      // Store lead in Firebase Realtime Database 'leads' reference with a 6-second timeout safety guard
-      const dbPromise = db.ref("leads").push({
-        name: data.name,
-        phone: data.phone,
-        email: data.email,
-        flatType: data.flatType,
-        message: data.message,
-        timestamp: firebase.database.ServerValue.TIMESTAMP // Server timestamp for Realtime DB
+      // 1. Submit to Netlify Forms (highly robust & native platform primitive)
+      const netlifyPromise = fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString(),
       });
 
+      // 2. Submit to Firebase Realtime Database (if configured)
+      let rtdbPromise = Promise.resolve();
+      if (isFirebaseConfigured) {
+        try {
+          rtdbPromise = db.ref("leads").push({
+            name: data.name,
+            phone: data.phone,
+            email: data.email,
+            flatType: data.flatType,
+            message: data.message,
+            timestamp: firebase.database.ServerValue.TIMESTAMP // Server timestamp for Realtime DB
+          });
+        } catch (err) {
+          console.error("Firebase Realtime Database write initiation failed:", err);
+          rtdbPromise = Promise.reject(err);
+        }
+      } else {
+        console.warn("Firebase is not fully configured yet. Skipping Realtime DB.");
+      }
+
+      // 3. Submit to Firebase Cloud Firestore (if configured & initialized)
+      let firestorePromise = Promise.resolve();
+      if (isFirebaseConfigured && firestoreDb) {
+        try {
+          firestorePromise = firestoreDb.collection("leads").add({
+            name: data.name,
+            phone: data.phone,
+            email: data.email,
+            flatType: data.flatType,
+            message: data.message,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp() // Server timestamp for Firestore
+          });
+        } catch (err) {
+          console.error("Firebase Cloud Firestore write initiation failed:", err);
+          firestorePromise = Promise.reject(err);
+        }
+      }
+
+      // A 6-second timeout safety guard for remote databases
       const timeoutPromise = new Promise((_, reject) =>
-        setTimeout(() => reject(new Error("Timeout connecting to Realtime Database")), 6000)
+        setTimeout(() => reject(new Error("Database connection timeout")), 6000)
       );
 
-      Promise.race([dbPromise, timeoutPromise])
-        .then(() => {
-          showSuccessModal();
+      // We wait for all submissions to settle.
+      // On Netlify, Netlify Forms submission should always succeed.
+      // As long as the Netlify Form submission or one of the Firebase database submissions is successful,
+      // we consider the overall operation successful.
+      Promise.allSettled([
+        netlifyPromise,
+        Promise.race([rtdbPromise, timeoutPromise]),
+        firestoreDb ? Promise.race([firestorePromise, timeoutPromise]) : Promise.resolve()
+      ])
+        .then((results) => {
+          console.log("Form submission settling results:", results);
+          const netlifySuccess = results[0].status === "fulfilled";
+          const rtdbSuccess = results[1].status === "fulfilled";
+          const firestoreSuccess = results[2] && results[2].status === "fulfilled";
+
+          if (netlifySuccess || rtdbSuccess || firestoreSuccess) {
+            showSuccessModal();
+          } else {
+            const firstError = (results[0].reason || results[1].reason || (results[2] && results[2].reason) || new Error("Unknown error")).message;
+            throw new Error(firstError);
+          }
         })
         .catch(err => {
-          console.error('Firebase Submission error:', err);
-          alert('Submission failed. Please make sure that:\n1. You have created a "Realtime Database" in your Firebase console.\n2. Your Database Rules allow public writes.\n\n(Error details: ' + err.message + ')');
+          console.error('Submission error:', err);
+          alert('Submission failed. Please check your network connection and try again.\n\n(Error details: ' + err.message + ')');
         })
         .finally(() => {
           btn.innerHTML = origText;
