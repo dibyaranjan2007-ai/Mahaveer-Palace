@@ -2537,54 +2537,48 @@
         <div class="divider"><span class="divider-icon" style="color:var(--light-gold)">✦</span></div>
       </div>
       <div class="gallery-grid">
-        <!-- Coming Soon Placeholders -->
-        <div class="gallery-item soon-item fade-in">
-          <img src="images/con-2.jpeg" alt="Coming Soon" class="blurred-bg-img" loading="lazy">
-          <div class="soon-overlay">
-            <div class="soon-badge">Coming Soon</div>
-            <div class="soon-text">Will be uploaded soon</div>
+        <!-- Site Construction Pictures (pic 1 - pic 5 & site photos) -->
+        <div class="gallery-item fade-in" onclick="openGalleryModal('images/pic 1.jpeg', 'Column Rebar & Shuttering Structural Progress')">
+          <img src="images/pic 1.jpeg" alt="Column Rebar & Shuttering Structural Progress" loading="lazy">
+          <div class="gallery-overlay">
+            <i class="fas fa-search-plus"></i>
           </div>
-          <div class="gallery-label">Construction Progress – Foundation & Superstructure</div>
+          <div class="gallery-label">Column Rebar & Shuttering Progress</div>
         </div>
-        <div class="gallery-item soon-item fade-in">
-          <img src="images/con-1.jpeg" alt="Coming Soon" class="blurred-bg-img" loading="lazy">
-          <div class="soon-overlay">
-            <div class="soon-badge">Coming Soon</div>
-            <div class="soon-text">Will be uploaded soon</div>
+        <div class="gallery-item fade-in" onclick="openGalleryModal('images/pic 2.jpeg', 'Foundation Slab Steel Reinforcement Grid Work')">
+          <img src="images/pic 2.jpeg" alt="Foundation Slab Steel Reinforcement Grid Work" loading="lazy">
+          <div class="gallery-overlay">
+            <i class="fas fa-search-plus"></i>
           </div>
-          <div class="gallery-label">Living Room Sample Interior</div>
+          <div class="gallery-label">Foundation Steel Reinforcement Grid</div>
         </div>
-        <div class="gallery-item soon-item fade-in">
-          <img src="images/con-2.jpeg" alt="Coming Soon" class="blurred-bg-img" loading="lazy">
-          <div class="soon-overlay">
-            <div class="soon-badge">Coming Soon</div>
-            <div class="soon-text">Will be uploaded soon</div>
+        <div class="gallery-item fade-in" onclick="openGalleryModal('images/pic 3.jpeg', 'Raft Foundation & Vertical Pillars Reinforcement Mesh')">
+          <img src="images/pic 3.jpeg" alt="Raft Foundation & Vertical Pillars Reinforcement Mesh" loading="lazy">
+          <div class="gallery-overlay">
+            <i class="fas fa-search-plus"></i>
           </div>
-          <div class="gallery-label">Premium Modular Kitchen</div>
+          <div class="gallery-label">Raft Foundation & Pillar Mesh</div>
         </div>
-        <div class="gallery-item soon-item fade-in">
-          <img src="images/con-1.jpeg" alt="Coming Soon" class="blurred-bg-img" loading="lazy">
-          <div class="soon-overlay">
-            <div class="soon-badge">Coming Soon</div>
-            <div class="soon-text">Will be uploaded soon</div>
+        <div class="gallery-item fade-in" onclick="openGalleryModal('images/pic 4.jpeg', 'Site Engineering – Foundation Structural Mesh View')">
+          <img src="images/pic 4.jpeg" alt="Foundation Structural Mesh View" loading="lazy">
+          <div class="gallery-overlay">
+            <i class="fas fa-search-plus"></i>
           </div>
-          <div class="gallery-label">Rooftop Terrace View & Garden</div>
+          <div class="gallery-label">Foundation Structural Mesh View</div>
         </div>
-        <div class="gallery-item soon-item fade-in">
-          <img src="images/con-2.jpeg" alt="Coming Soon" class="blurred-bg-img" loading="lazy">
-          <div class="soon-overlay">
-            <div class="soon-badge">Coming Soon</div>
-            <div class="soon-text">Will be uploaded soon</div>
+        <div class="gallery-item fade-in" onclick="openGalleryModal('images/pic 5.jpeg', 'On-Site Night Construction Operations & Aerial View')">
+          <img src="images/pic 5.jpeg" alt="On-Site Night Construction Operations" loading="lazy">
+          <div class="gallery-overlay">
+            <i class="fas fa-search-plus"></i>
           </div>
-          <div class="gallery-label">Amenity Zone</div>
+          <div class="gallery-label">Night Construction & Site Operations</div>
         </div>
-        <div class="gallery-item soon-item fade-in">
-          <img src="images/con-1.jpeg" alt="Coming Soon" class="blurred-bg-img" loading="lazy">
-          <div class="soon-overlay">
-            <div class="soon-badge">Coming Soon</div>
-            <div class="soon-text">Will be uploaded soon</div>
+        <div class="gallery-item fade-in" onclick="openGalleryModal('images/con-2.jpeg', 'Excavation Work & Heavy Machinery On-Site')">
+          <img src="images/con-2.jpeg" alt="Excavation Work & Heavy Machinery" loading="lazy">
+          <div class="gallery-overlay">
+            <i class="fas fa-search-plus"></i>
           </div>
-          <div class="gallery-label">Master Bedroom Design</div>
+          <div class="gallery-label">Excavation & Machinery Work</div>
         </div>
       </div>
     </div>
@@ -2773,12 +2767,36 @@
     </div>
   </div>
 
+  <!-- GALLERY LIGHTBOX MODAL -->
+  <div id="galleryModal" onclick="closeGalleryModal(event)" style="display:none;position:fixed;inset:0;background:rgba(20,12,6,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:99999;align-items:center;justify-content:center;padding:1.5rem;animation:fadeInSoon 0.3s ease;">
+    <div onclick="event.stopPropagation()" style="position:relative;max-width:92vw;max-height:88vh;display:flex;flex-direction:column;align-items:center;">
+      <button onclick="closeGalleryModal()" style="position:absolute;top:-2.5rem;right:0;background:none;border:none;color:var(--light-gold);font-size:2.2rem;cursor:pointer;line-height:1;transition:transform 0.2s;">✕</button>
+      <img id="galleryModalImg" src="" alt="Gallery View" style="max-width:100%;max-height:78vh;object-fit:contain;border:2px solid var(--deep-gold);border-radius:6px;box-shadow:0 12px 40px rgba(0,0,0,0.8);">
+      <div id="galleryModalTitle" style="color:var(--pale-gold);margin-top:1rem;font-family:'Cormorant Garamond',serif;text-align:center;font-size:1.3rem;font-style:italic;letter-spacing:0.05em;"></div>
+    </div>
+  </div>
+
   <!-- Firebase App (the core Firebase SDK), Realtime Database, and Analytics SDKs -->
   <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics-compat.js"></script>
 
   <script>
+    function openGalleryModal(src, title) {
+      const modal = document.getElementById('galleryModal');
+      const img = document.getElementById('galleryModalImg');
+      const caption = document.getElementById('galleryModalTitle');
+      if (modal && img && caption) {
+        img.src = src;
+        caption.innerText = title;
+        modal.style.display = 'flex';
+      }
+    }
+    function closeGalleryModal() {
+      const modal = document.getElementById('galleryModal');
+      if (modal) modal.style.display = 'none';
+    }
+
     window.addEventListener('scroll', () => document.getElementById('navbar').classList.toggle('scrolled', scrollY > 60));
     document.getElementById('menuBtn').addEventListener('click', () => document.getElementById('mobileMenu').classList.add('open'));
     document.getElementById('menuClose').addEventListener('click', closeMobileMenu);
